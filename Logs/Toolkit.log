@@ -1,0 +1,450 @@
+2025-11-20 17:26:08	Запуск: Тестовое сообщение в Telegram (D:\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 17:26:09	Готово: Тестовое сообщение в Telegram
+РЎР?Р?Р+С%РчР?РёРч Р?С'РїС?Р°Р?Р>РчР?Р? Р? Telegram.
+
+2025-11-20 17:26:55	Запуск: Инвентаризация ПК (D:\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 17:26:59	Готово: Инвентаризация ПК
+Inventory saved to .\PC_Inventory_DESKTOP-EAGTED8.json
+
+2025-11-20 17:27:10	Запуск: Список установленного ПО (D:\SysAdminToolkit\Scripts\Inventory\Get-InstalledSoftware.ps1)
+2025-11-20 17:27:11	Готово: Список установленного ПО
+Installed software list saved to .\InstalledSoftware_DESKTOP-EAGTED8.csv
+
+2025-11-20 17:27:17	Запуск: Отправить последний отчёт в Telegram (D:\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1)
+2025-11-20 17:27:18	Готово: Отправить последний отчёт в Telegram
+powershell.exe : At D:\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:10 char:83
+At D:\SysAdminToolkit\SysAdminToolkit.GUI.ps1:163 char:19
++ ...   $output = & powershell.exe -ExecutionPolicy Bypass -File $scriptPat ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (At D:\SysAdminT....ps1:10 char:83:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
++ ... ame -Caption "Р?Р?Р?РчР?С'Р°С?РёР·Р°С+РёС? Р?Р? $($env:COMPUTERNAME)"
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 
+
+2025-11-20 19:24:00	Запуск: Инвентаризация ПК (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 19:24:15	Готово: Инвентаризация ПК
+Inventory saved to .\PC_Inventory_WORKJULEANNA.json
+
+2025-11-20 19:25:06	Запуск: Список установленного ПО (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-InstalledSoftware.ps1)
+2025-11-20 19:25:08	Готово: Список установленного ПО
+Installed software list saved to .\InstalledSoftware_WORKJULEANNA.csv
+
+2025-11-20 19:26:06	Запуск: Проверка производительности (D:\Windows\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2025-11-20 19:26:10	Готово: Проверка производительности
+=== CPU ===
+
+
+=== RAM ===
+Name                                      LoadPercentage
+----                                      --------------
+Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz               
+
+
+
+
+TotalGB : 3,84
+FreeGB  : 0,77
+
+
+
+
+=== DISKS ===
+
+Name FreeGB UsedGB
+---- ------ ------
+C      5,49 112,47
+D     30,78  26,94
+
+
+
+=== TOP PROCESSES (CPU) ===
+
+Name                  Id        CPU        WS
+----                  --        ---        --
+System                 4  684,15625    139264
+msedgewebview2     10236 335,328125 203071488
+Memory Compression  2564   250,6875 163135488
+chrome              2868  162,53125 119877632
+msedgewebview2       836 151,421875  79507456
+explorer            6200 100,921875 105996288
+dwm                 7940  92,453125  63467520
+svchost              700   76,78125  11907072
+Code               10156  73,453125 150421504
+Code               10932       68,5  50778112
+
+
+
+2025-11-20 19:26:23	Запуск: Инвентаризация ПК (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 19:26:32	Готово: Инвентаризация ПК
+Inventory saved to .\PC_Inventory_WORKJULEANNA.json
+
+2025-11-20 19:27:28	Запуск: Список локальных админов (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 19:27:32	Готово: Список локальных админов
+Administrator
+Julea
+
+2025-11-20 19:27:39	Запуск: Тестовое сообщение в Telegram (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 19:27:41	Готово: Тестовое сообщение в Telegram
+РЎР?Р?Р+С%РчР?РёРч Р?С'РїС?Р°Р?Р>РчР?Р? Р? Telegram.
+
+2025-11-20 19:28:15	Запуск: Проверка подозрительных процессов (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 19:28:18	Готово: Проверка подозрительных процессов
+
+Name                  Id       CPU       WS
+----                  --       ---       --
+csrss                576    3,9375  2035712
+csrss               7960   9,90625  3203072
+Idle                   0               8192
+LsaIso               912     0,375    61440
+Memory Compression  2564   251,875 36118528
+Registry             112  2,703125 49876992
+Secure System         56         0 13656064
+services             900 26,234375  6086656
+smss                 356    0,8125        0
+svchost            10620  0,453125  9048064
+svchost            13276     0,125  8208384
+System                 4 693,03125   139264
+wininit              708   0,40625   163840
+
+
+
+2025-11-20 20:36:27	Старт: Сбор логов (D:\Windows\SysAdminToolkit\Scripts\Utils\Collect-Logs.ps1)
+2025-11-20 20:36:30	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-20 20:36:57	Старт: Локальные администраторы (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 20:37:01	Успешно: Локальные администраторы
+2025-11-20 20:48:31	?????: ???????? ????????? (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 20:48:34	??????: At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-TGMessage.ps1:41 char:100
++ ... ѕСЃСЊ РѕС‚РїСЂР°РІРёС‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ: $($_.Exception.Message)"
++                                                                         ~
+The string is missing the terminator: ".
+
+At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-TGMessage.ps1:9 char:35
++ if (-not (Test-Path $configPath)) {
++                                   ~
+Missing closing '}' in statement block or type definition.
+2025-11-20 20:48:50	?????: ????????? ?????????????? ? Telegram (D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1)
+2025-11-20 20:48:52	??????: At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:16 char:83
++ ... lName -Caption "РРЅРІРµРЅС‚Р°СЂРёР·Р°С†РёСЏ СЃ $($env:COMPUTERNAME)"
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+
+At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:9 char:41
++ if (-not $files -or $files.Count -eq 0) {
++                                         ~
+Missing closing '}' in statement block or type definition.
+2025-11-20 20:56:02	Старт: Инвентаризация ПК (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 20:56:05	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-20 20:56:49	Старт: Проверка сети (D:\Windows\SysAdminToolkit\Scripts\Network\Test-Network.ps1)
+2025-11-20 20:57:26	Успешно: Проверка сети
+2025-11-20 20:57:56	Старт: Локальные администраторы (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 20:58:02	Успешно: Локальные администраторы
+2025-11-20 21:00:46	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:00:51	Успешно: Тестовое сообщение
+2025-11-20 21:02:31	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:02:35	Успешно: Тестовое сообщение
+2025-11-20 21:04:13	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:04:16	Успешно: Тестовое сообщение
+2025-11-20 21:05:04	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:05:07	Успешно: Тестовое сообщение
+2025-11-20 21:07:49	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:07:55	Успешно: Тестовое сообщение
+2025-11-20 21:09:32	Старт: Локальные администраторы (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 21:09:44	Успешно: Локальные администраторы
+2025-11-20 21:09:53	Старт: Быстрая проверка на малварь (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 21:09:56	Успешно: Быстрая проверка на малварь
+2025-11-20 21:10:54	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:10:58	Успешно: Тестовое сообщение
+2025-11-20 21:12:52	Старт: Локальные администраторы (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 21:12:57	Успешно: Локальные администраторы
+2025-11-20 21:13:02	Старт: Быстрая проверка на малварь (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 21:13:05	Успешно: Быстрая проверка на малварь
+2025-11-20 21:13:49	Старт: Инвентаризация ПК (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 21:14:29	Успешно: Инвентаризация ПК
+2025-11-20 21:14:40	Старт: Проверка производительности (D:\Windows\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2025-11-20 21:14:46	Успешно: Проверка производительности
+2025-11-20 21:14:56	Старт: Экспорт событий (D:\Windows\SysAdminToolkit\Scripts\Monitoring\Export-EventLogs.ps1)
+2025-11-20 21:14:59	Успешно: Экспорт событий
+2025-11-20 21:15:29	Старт: Очистить временные файлы (D:\Windows\SysAdminToolkit\Scripts\Utils\Clean-Temp.ps1)
+2025-11-20 21:15:32	Успешно: Очистить временные файлы
+2025-11-20 21:15:39	Старт: Сбор логов (D:\Windows\SysAdminToolkit\Scripts\Utils\Collect-Logs.ps1)
+2025-11-20 21:15:45	Успешно: Сбор логов
+2025-11-20 21:15:52	Старт: Окно с сообщением (D:\Windows\SysAdminToolkit\Scripts\RemoteHelp\Popup-Message.ps1)
+2025-11-20 21:15:58	Успешно: Окно с сообщением
+2025-11-20 21:22:25	Старт: Проверка сети (D:\Windows\SysAdminToolkit\Scripts\Network\Test-Network.ps1)
+2025-11-20 21:23:12	Успешно: Проверка сети
+2025-11-20 21:23:27	Старт: Сканирование LAN (D:\Windows\SysAdminToolkit\Scripts\Network\Scan-LAN.ps1)
+2025-11-20 21:23:35	Успешно: Сканирование LAN
+2025-11-20 21:47:49	Start: Test message (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:47:53	Success: Test message
+2025-11-20 21:50:06	Start: Clean temp files (D:\Windows\SysAdminToolkit\Scripts\Utils\Clean-Temp.ps1)
+2025-11-20 21:50:09	Success: Clean temp files
+2025-11-20 21:50:13	Start: Collect logs (D:\Windows\SysAdminToolkit\Scripts\Utils\Collect-Logs.ps1)
+2025-11-20 21:50:16	Success: Collect logs
+2025-11-20 21:50:26	Start: Backup folder (D:\Windows\SysAdminToolkit\Scripts\Backup\Backup-Folder.ps1)
+2025-11-20 21:50:30	Success: Backup folder
+2025-11-20 21:50:43	Start: Quick malware check (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 21:50:49	Success: Quick malware check
+2025-11-20 21:51:27	Start: PC Inventory (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 21:51:55	Success: PC Inventory
+2025-11-20 21:56:25	Старт: Тестовое сообщение (D:\Windows\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-20 21:56:29	Успешно: Тестовое сообщение
+2025-11-20 21:56:33	Старт: Локальные администраторы (D:\Windows\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-20 21:56:41	Успешно: Локальные администраторы
+2025-11-20 21:56:43	Старт: Быстрая проверка на малварь (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 21:56:50	Успешно: Быстрая проверка на малварь
+2025-11-20 22:01:05	Старт: Быстрая проверка на малварь (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 22:01:10	Успешно: Быстрая проверка на малварь
+2025-11-20 22:01:37	Старт: Резервная копия папки (D:\Windows\SysAdminToolkit\Scripts\Backup\Backup-Folder.ps1)
+2025-11-20 22:01:41	Успешно: Резервная копия папки
+2025-11-20 22:02:17	Старт: Резервная копия папки (D:\Windows\SysAdminToolkit\Scripts\Backup\Backup-Folder.ps1)
+2025-11-20 22:02:20	Успешно: Резервная копия папки
+2025-11-20 22:03:38	Старт: Бэкап профилей пользователей (D:\Windows\SysAdminToolkit\Scripts\Backup\Backup-UserProfiles.ps1)
+2025-11-20 22:03:43	Успешно: Бэкап профилей пользователей
+2025-11-20 22:03:57	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:20:05	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:20:06	Ошибка: At D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1:31 char:41
++ ... Р—Р°РїСѓСЃРєР°СЋ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РѕР±СЂР°Р·Р° (DISM)..."
++                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+2025-11-20 22:22:43	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:23:58	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:27:20	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:27:21	Ошибка: At D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1:17 char:21
++         Write-Host "$Activity: $percent%"
++                     ~~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1:21 char:17
++     Write-Host "$Activity: 100%"
++                 ~~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+2025-11-20 22:31:18	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 22:56:17	Успешно: Проверка Windows (SFC + DISM)
+2025-11-20 23:06:12	Старт: Последняя инвентаризация в Telegram (D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1)
+2025-11-20 23:06:15	Ошибка: At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:16 char:83
++ ... lName -Caption "РРЅРІРµРЅС‚Р°СЂРёР·Р°С†РёСЏ СЃ $($env:COMPUTERNAME)"
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+
+At D:\Windows\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:9 char:41
++ if (-not $files -or $files.Count -eq 0) {
++                                         ~
+Missing closing '}' in statement block or type definition.
+2025-11-20 23:06:22	Старт: Инвентаризация ПК (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-20 23:06:26	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-20 23:06:33	Старт: Список установленного ПО (D:\Windows\SysAdminToolkit\Scripts\Inventory\Get-InstalledSoftware.ps1)
+2025-11-20 23:06:36	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-20 23:06:43	Старт: Перезагрузка списка ПК (D:\Windows\SysAdminToolkit\Scripts\Mass\Restart-Computers.ps1)
+2025-11-20 23:06:45	Успешно: Перезагрузка списка ПК
+2025-11-20 23:06:54	Старт: Проверка производительности (D:\Windows\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2025-11-20 23:07:02	Успешно: Проверка производительности
+2025-11-20 23:07:08	Старт: Экспорт событий (D:\Windows\SysAdminToolkit\Scripts\Monitoring\Export-EventLogs.ps1)
+2025-11-20 23:07:10	Ошибка: At D:\Windows\SysAdminToolkit\Scripts\Monitoring\Export-EventLogs.ps1:4 char:24
++     [string]$LogName = 'System',
++                        ~~~~~~~~
+The assignment expression is not valid. The input to an assignment operator must be an object that is able to accept assignments, such as a variable or a property.
+2025-11-20 23:07:26	Старт: Быстрая проверка на малварь (D:\Windows\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-20 23:07:31	Успешно: Быстрая проверка на малварь
+2025-11-20 23:43:07	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 23:52:27	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-20 23:57:34	Старт: Проверка Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-21 00:03:36	?????: ???????? Windows (SFC + DISM) (D:\Windows\SysAdminToolkit\Scripts\Recovery\Repair-Windows.ps1)
+2025-11-21 08:34:08	Старт: Тестовое сообщение (D:\SysAdminToolkit\Scripts\Telegram\Test-TGMessage.ps1)
+2025-11-21 08:34:10	Успешно: Тестовое сообщение
+2025-11-21 08:34:35	Старт: Локальные администраторы (D:\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-21 08:34:40	Успешно: Локальные администраторы
+2025-11-21 08:34:50	Старт: Быстрая проверка на малварь (D:\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-21 08:34:53	Успешно: Быстрая проверка на малварь
+2025-11-21 09:43:07	Старт: Очистить временные файлы (D:\SysAdminToolkit\Scripts\Utils\Clean-Temp.ps1)
+2025-11-21 09:43:09	Успешно: Очистить временные файлы
+2025-11-21 09:43:22	Старт: Сбор логов (D:\SysAdminToolkit\Scripts\Utils\Collect-Logs.ps1)
+2025-11-21 09:43:22	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-21 09:43:32	Старт: Проверка сети (D:\SysAdminToolkit\Scripts\Network\Test-Network.ps1)
+2025-11-21 09:43:35	Успешно: Проверка сети
+2025-11-21 09:43:47	Старт: Инвентаризация ПК (D:\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-21 09:43:47	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-21 09:43:53	Старт: Список установленного ПО (D:\SysAdminToolkit\Scripts\Inventory\Get-InstalledSoftware.ps1)
+2025-11-21 09:43:54	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-21 09:44:11	Старт: Проверка производительности (D:\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2025-11-21 09:44:14	Успешно: Проверка производительности
+2025-11-21 09:44:25	Старт: Экспорт событий (D:\SysAdminToolkit\Scripts\Monitoring\Export-EventLogs.ps1)
+2025-11-21 09:44:26	Ошибка: At D:\SysAdminToolkit\Scripts\Monitoring\Export-EventLogs.ps1:4 char:24
++     [string]$LogName = 'System',
++                        ~~~~~~~~
+The assignment expression is not valid. The input to an assignment operator must be an object that is able to accept assignments, such as a variable or a property.
+2025-11-21 09:44:32	Старт: Последняя инвентаризация в Telegram (D:\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1)
+2025-11-21 09:44:33	Ошибка: At D:\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:16 char:83
++ ... lName -Caption "РРЅРІРµРЅС‚Р°СЂРёР·Р°С†РёСЏ СЃ $($env:COMPUTERNAME)"
++                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The string is missing the terminator: '.
+
+At D:\SysAdminToolkit\Scripts\Telegram\Send-LastInventoryToTG.ps1:9 char:41
++ if (-not $files -or $files.Count -eq 0) {
++                                         ~
+Missing closing '}' in statement block or type definition.
+2025-11-21 09:45:22	Старт: Локальные администраторы (D:\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-21 09:45:27	Успешно: Локальные администраторы
+2025-11-21 10:32:31	Старт: Локальные администраторы (D:\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-21 10:32:36	Успешно: Локальные администраторы
+2025-11-21 10:32:45	Старт: Быстрая проверка на малварь (D:\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-21 10:32:48	Успешно: Быстрая проверка на малварь
+2025-11-21 10:33:05	Старт: Очистить временные файлы (D:\SysAdminToolkit\Scripts\Utils\Clean-Temp.ps1)
+2025-11-21 10:33:05	Успешно: Очистить временные файлы
+2025-11-21 10:33:14	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:33:15	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:34:50	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:34:50	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:35:15	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:35:15	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:36:33	Старт: Быстрая проверка на малварь (D:\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-21 10:36:35	Успешно: Быстрая проверка на малварь
+2025-11-21 10:37:03	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:37:04	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:37:21	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:37:22	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:37:30	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:37:31	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:39:39	Старт: Проверка сети (D:\SysAdminToolkit\Scripts\Network\Test-Network.ps1)
+2025-11-21 10:39:49	Успешно: Проверка сети
+2025-11-21 10:40:39	Старт: Инвентаризация ПК (D:\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2025-11-21 10:40:40	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-21 10:48:56	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:48:56	Ошибка: At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Missing closing ')' in expression.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Missing ')' in function parameter list.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:3 char:23
++     [string]$Mode = ''Status'',
++                       ~~~~~~~~
+Unexpected token 'Status''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:3 char:31
++     [string]$Mode = ''Status'',
++                               ~
+Missing argument in parameter list.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:20
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                    ~~~~~~~~
+Unexpected token 'Domain''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:20
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                    ~
+Missing closing ')' in expression.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:59
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                                                           ~
+Unexpected token ')' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:5 char:26
++     [string]$Profile = ''All''
++                          ~~~~~
+Unexpected token 'All''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:6 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+2025-11-21 10:49:49	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 10:49:50	Ошибка: Missing an argument for parameter 'RedirectStandardOutput'. Specify a parameter of type 'System.String' and try again.
+2025-11-21 10:49:54	Старт: Быстрая проверка Defender (D:\SysAdminToolkit\Scripts\Security\Defender-QuickScan.ps1)
+2025-11-21 10:50:31	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:50:31	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:50:33	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 10:50:34	Успешно: Вкл/выкл USB-накопители
+2025-11-21 10:50:42	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:50:43	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 10:50:49	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:50:50	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 10:51:01	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:51:02	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 10:52:04	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 10:52:06	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 10:52:18	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 10:52:18	Ошибка: Missing an argument for parameter 'RedirectStandardOutput'. Specify a parameter of type 'System.String' and try again.
+2025-11-21 10:52:26	Старт: BitLocker статус (D:\SysAdminToolkit\Scripts\Security\BitLocker-Status.ps1)
+2025-11-21 10:52:27	Успешно: BitLocker статус
+2025-11-21 10:52:46	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:52:47	Ошибка: At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Missing closing ')' in expression.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Parameter declarations are a comma-separated list of variable names with optional initializer expressions.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:2 char:20
++     [ValidateSet(''Status'',''Enable'',''Disable'')]
++                    ~
+Missing ')' in function parameter list.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:3 char:23
++     [string]$Mode = ''Status'',
++                       ~~~~~~~~
+Unexpected token 'Status''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:3 char:31
++     [string]$Mode = ''Status'',
++                               ~
+Missing argument in parameter list.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:20
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                    ~~~~~~~~
+Unexpected token 'Domain''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:20
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                    ~
+Missing closing ')' in expression.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:4 char:59
++     [ValidateSet(''Domain'',''Private'',''Public'',''All'')]
++                                                           ~
+Unexpected token ')' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:5 char:26
++     [string]$Profile = ''All''
++                          ~~~~~
+Unexpected token 'All''' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1:6 char:1
++ )
++ ~
+Unexpected token ')' in expression or statement.
+
+Not all parse errors were reported.  Correct the reported errors and try again.
+2025-11-21 10:53:40	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 10:53:41	Ошибка: Missing an argument for parameter 'RedirectStandardOutput'. Specify a parameter of type 'System.String' and try again.
+2025-11-21 10:53:45	Старт: Быстрая проверка Defender (D:\SysAdminToolkit\Scripts\Security\Defender-QuickScan.ps1)
+2025-11-21 10:54:23	Успешно: Быстрая проверка Defender
+2025-11-21 10:56:16	Старт: Быстрая проверка на малварь (D:\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2025-11-21 10:56:18	Успешно: Быстрая проверка на малварь
+2025-11-21 10:59:30	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 10:59:31	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 11:02:03	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 11:02:04	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 11:02:09	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 11:02:10	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 11:02:18	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:02:19	Успешно: RDP + NLA (вкл/выкл)

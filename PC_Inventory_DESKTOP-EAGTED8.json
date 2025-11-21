@@ -1,0 +1,27 @@
+﻿{
+    "ComputerName":  "DESKTOP-EAGTED8",
+    "OS":  "Майкрософт Windows 10 Pro",
+    "OSVersion":  "10.0.19045",
+    "Manufacturer":  "Acer",
+    "Model":  "Aspire AL15-41P",
+    "CPU":  "AMD Ryzen 7 5700U with Radeon Graphics         ",
+    "Cores":  8,
+    "RAM_GB":  15.39,
+    "GPU":  "AMD Radeon(TM) Graphics",
+    "Disks":  [
+                  {
+                      "FriendlyName":  "JMicron Generic",
+                      "Size":  120034123776
+                  },
+                  {
+                      "FriendlyName":  "FORESEE 512GB SSD",
+                      "Size":  512110190592
+                  }
+              ],
+    "IPAddresses":  "192.168.68.74, 127.0.0.1",
+    "Date":  {
+                 "value":  "\/Date(1763652419289)\/",
+                 "DisplayHint":  2,
+                 "DateTime":  "20 листопада 2025 р. 17:26:59"
+             }
+}

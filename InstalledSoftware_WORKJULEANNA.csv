@@ -1,0 +1,181 @@
+﻿"DisplayName","DisplayVersion","Publisher","InstallDate"
+"7-Zip 24.09","24.09","Igor Pavlov",
+"AnyDesk","ad 9.6.5","AnyDesk Software GmbH",
+"Avast Update Helper","1.8.1697.6","AVAST Software","20250424"
+"Canon MF450 Series","7.2.0.0","CANON INC.",
+"CCleaner","6.38","Piriform",
+"DBeaver 25.1.3","25.1.3","DBeaver Corp",
+"Docker Desktop","4.50.0","Docker Inc.",
+"Eclipse Temurin JDK with Hotspot 21.0.7+6 (x64)","21.0.7.6","Eclipse Adoptium","20250623"
+"gettext 0.25 + iconv 1.17 - shared (32 bit)",,"Michele Locati","20250522"
+"GIMP 3.0.6-1","3.0.6.1","The GIMP Team","20251118"
+"Git","2.50.1","The Git Development Community","20250708"
+"Google Chrome","142.0.7444.175","Google LLC","20251118"
+"Intel(R) Processor Graphics","20.19.15.5171","Intel Corporation",
+"JPEXS Free Flash Decompiler","24.1.0","JPEXS","20251008"
+"LibreOffice 25.2.2.2","25.2.2.2","The Document Foundation","20250412"
+"Lightshot-5.5.0.7","5.5.0.7","Skillbrains","20250416"
+"MariaDB 11.8 (x64)","11.8.2.0","MariaDB Corporation Ab",
+"MariaDB 11.8 (x64)","11.8.2.0","MariaDB Corporation Ab","20250712"
+"Microsoft Edge","142.0.3595.90","Корпорація Майкрософт","20251119"
+"Microsoft OneDrive","25.209.1026.0002","Microsoft Corporation",
+"Microsoft SQL Server 2012 Express LocalDB ","11.0.2100.60","Microsoft Corporation","20250612"
+"Microsoft SQL Server 2012 Native Client ","11.0.2100.60","Microsoft Corporation","20250612"
+"Microsoft Teams Meeting Add-in for Microsoft Office","1.25.24601","Microsoft","20251014"
+"Microsoft Update Health Tools","3.74.0.0","Microsoft Corporation","20250415"
+"Microsoft Visio LTSC Professional 2024 - uk-ua","16.0.18730.20122","Microsoft Corporation",
+"Microsoft Visio LTSC профессиональный 2024 - ru-ru","16.0.18730.20122","Microsoft Corporation",
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.50727.4053 False","8.0.50727.4053","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.50727.42 False","8.0.50727.42","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.51011 False","8.0.51011","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.56336 False","8.0.56336","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.57102 False","8.0.57102","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.58298 False","8.0.58298","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.59192 False","8.0.59192","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x64 8.0.61000","8.0.61000","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.50727.4053 False","8.0.50727.4053","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.50727.42 False","8.0.50727.42","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.51011 False","8.0.51011","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.56336 False","8.0.56336","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.57103 False","8.0.57103","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.58299 False","8.0.58299","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.59193 False","8.0.59193","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2005 Redistributable - x86 8.0.61001","8.0.61001","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.21022 False","9.0.21022","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.21022.0 False","9.0.21022","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.21022.218 False","9.0.21022.218","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30411 False","9.0.30411","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.0 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.17 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4048 False","9.0.30729.4048","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148 False","9.0.30729.4148","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.4148.0 False","9.0.30729.4148","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.5570 False","9.0.30729.5570","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161","9.0.30729.6161","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.21022 False","9.0.21022","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.21022.0 False","9.0.21022","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.21022.218 False","9.0.21022.218","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30411 False","9.0.30411","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.0 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17 False","9.0.30729","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4048 False","9.0.30729.4048","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148 False","9.0.30729.4148","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148.0 False","9.0.30729.4148","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.5570 False","9.0.30729.5570","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161","9.0.30729.6161","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2010 Redistributable - x64 10.0.30319 False","10.0.30319","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2010 Redistributable - x64 10.0.40219","10.0.40219","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2010 Redistributable - x86 10.0.30319 False","10.0.30319","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2010 Redistributable - x86 10.0.40219","10.0.40219","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.50727 False","11.0.50727.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.50727 False Eng","11.0.50727.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.51106 False","11.0.51106.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.51106 False Eng","11.0.51106.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.60610 False","11.0.60610.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.60610 False Eng","11.0.60610.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030","11.0.61030.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.61030 False Eng","11.0.61030.0","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.50727 False","11.0.50727.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.50727 False Eng","11.0.50727.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.51106 False","11.0.51106.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.51106 False Eng","11.0.51106.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.60610 False","11.0.60610.1","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.60610 False Eng","11.0.60610.1","Microsoft Corporation",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030","11.0.61030.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.61030 False Eng","11.0.61030.0","Microsoft Corporation",
+"Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.50727 False","11.0.50727","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.51106 False","11.0.51106","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.60610 False","11.0.60610","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.61030","11.0.61030","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.50727 False","11.0.50727","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.51106 False","11.0.51106","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.60610 False","11.0.60610","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.61030","11.0.61030","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.50727 False","11.0.50727","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.51106 False","11.0.51106","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.60610 False","11.0.60610","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.61030","11.0.61030","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.50727 False","11.0.50727","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.51106 False","11.0.51106","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.60610 False","11.0.60610","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.61030","11.0.61030","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501 False","12.0.30501.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501 False Eng","12.0.30501.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40649 False","12.0.40649.5","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40649 False Eng","12.0.40649.5","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660 False","12.0.40660.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660 False Eng","12.0.40660.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40664","12.0.40664.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40664 False Eng","12.0.40664.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501 False","12.0.30501.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501 False Eng","12.0.30501.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649 False","12.0.40649.5","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40649 False Eng","12.0.40649.5","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660 False","12.0.40660.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660 False Eng","12.0.40660.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40664","12.0.40664.0","Корпорация Майкрософт",
+"Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40664 False Eng","12.0.40664.0","Microsoft Corporation",
+"Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.21005 False","12.0.21005","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40649 False","12.0.40649","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40660 False","12.0.40660","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40664","12.0.40664","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.21005 False","12.0.21005","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40649 False","12.0.40649","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40660 False","12.0.40660","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40664","12.0.40664","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.21005 False","12.0.21005","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40649 False","12.0.40649","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40660 False","12.0.40660","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40664","12.0.40664","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.21005 False","12.0.21005","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40649 False","12.0.40649","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40660 False","12.0.40660","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40664","12.0.40664","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2015-2022 Redistributable (x64) - 14.42.34433","14.42.34433.0","Microsoft Corporation",
+"Microsoft Visual C++ 2015-2022 Redistributable (x86) - 14.42.34433","14.42.34433.0","Microsoft Corporation",
+"Microsoft Visual C++ 2022 X64 Additional Runtime - 14.42.34433","14.42.34433","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2022 X64 Minimum Runtime - 14.42.34433","14.42.34433","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2022 X86 Additional Runtime - 14.32.31326","14.32.31326","Microsoft Corporation","20250412"
+"Microsoft Visual C++ 2022 X86 Minimum Runtime - 14.42.34433","14.42.34433","Microsoft Corporation","20250412"
+"Mozilla Firefox (x64 ru)","141.0","Mozilla",
+"Mozilla Maintenance Service","138.0.1","Mozilla",
+"Mozilla Thunderbird (x64 ru)","141.0","Mozilla",
+"Nmap 7.95","7.95","Nmap Project",
+"Node.js","22.14.0","Node.js Foundation","20250412"
+"Notepad++ (64-bit x64)","8.7.9","Notepad++ Team",
+"Npcap","1.81","Nmap Project",
+"Office 16 Click-to-Run Extensibility Component","16.0.18623.20156","Microsoft Corporation","20250430"
+"Office 16 Click-to-Run Licensing Component","16.0.18730.20122","Microsoft Corporation","20250430"
+"Office 16 Click-to-Run Localization Component","16.0.18623.20156","Microsoft Corporation","20250430"
+"PostgreSQL 17 ","17.4-1","PostgreSQL Global Development Group","20250412"
+"Python 3.13.3 Add to Path (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Core Interpreter (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Development Libraries (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Documentation (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Executables (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 pip Bootstrap (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Standard Library (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Tcl/Tk Support (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python 3.13.3 Test Suite (64-bit)","3.13.3150.0","Python Software Foundation","20250412"
+"Python Launcher","3.13.3150.0","Python Software Foundation","20250412"
+"Realtek High Definition Audio Driver","6.0.9273.1","Realtek Semiconductor Corp.",
+"Redis on Windows","5.0.14.1","Poradowski.com","20250603"
+"Ruffle","0.2.0.25281","Ruffle LLC","20251008"
+"Safer Web","4.0.7","Reason Cybersecurity Inc.",
+"Service Pack 2 for SQL Server 2014 (KB3171021)","12.2.5000.0","Microsoft Corporation","20250521"
+"TeamViewer","15.65.6","TeamViewer",
+"TimeZero client 7.0.0","1.0","ООО ""Точка отсчета""",
+"Update for x64-based Windows Systems (KB5001716)","8.94.0.0","Microsoft Corporation","20250707"
+"USB Drivers Installer, версія 2.002.001","2.002.001","U-Prox IP","20250521"
+"USBPcap 1.5.4.0","1.5.4.0","Tomasz Mon",
+"Viber","25.2.1.0","2010-2025 Viber Media S.a.r.l","20250504"
+"Windows Driver Package - Microchip Technology, Inc. (usbser) Ports  (12/06/2012 5.1.2600.7)","12/06/2012 5.1.2600.7","Microchip Technology, Inc.",
+"Windows Driver Package - Silicon Laboratories Inc. (silabser) Ports  (05/23/2018 6.7.6.2130)","05/23/2018 6.7.6.2130","Silicon Laboratories Inc.",
+"Windows Subsystem for Linux","2.6.1.0","Microsoft Corporation","20251008"
+"WinRAR 5.61 (32-разрядная)","5.61.0","win.rar GmbH",
+"Wireshark 4.4.6 x64","4.4.6","The Wireshark developer community, https://www.wireshark.org",
+"XAMPP","8.2.12-0","Apache Friends","20250412"
+"Приложения Microsoft 365 для бизнеса - ru-ru","16.0.18730.20122","Microsoft Corporation",
+"Середовище виконання Microsoft Edge WebView2","142.0.3595.90","Корпорація Майкрософт","20251120"

@@ -1,0 +1,6 @@
+{
+  "CompanyName": "MyCompany",
+  "DefaultBackupPath": "D:/Backups",
+  "Subnet": "192.168.1.",
+  "Description": "Общие настройки для SysAdminToolkit v5.0"
+}

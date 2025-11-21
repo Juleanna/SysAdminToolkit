@@ -1,0 +1,27 @@
+﻿{
+    "ComputerName":  "WORKJULEANNA",
+    "OS":  "Майкрософт Windows 10 Pro",
+    "OSVersion":  "10.0.19045",
+    "Manufacturer":  "Acer",
+    "Model":  "Extensa 2519",
+    "CPU":  "Intel(R) Pentium(R) CPU  N3710  @ 1.60GHz",
+    "Cores":  4,
+    "RAM_GB":  3.84,
+    "GPU":  "Intel(R) HD Graphics",
+    "Disks":  [
+                  {
+                      "FriendlyName":  "SanDisk SD9SB8W128G1014",
+                      "Size":  128035676160
+                  },
+                  {
+                      "FriendlyName":  "Kingston DataTraveler 3.0",
+                      "Size":  61991813120
+                  }
+              ],
+    "IPAddresses":  "10.0.0.43, 127.0.0.1",
+    "Date":  {
+                 "value":  "\/Date(1763659592090)\/",
+                 "DisplayHint":  2,
+                 "DateTime":  "20 листопада 2025 р. 19:26:32"
+             }
+}
