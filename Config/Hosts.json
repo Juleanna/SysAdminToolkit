@@ -1,0 +1,7 @@
+{
+  "Hosts": [
+    { "Name": "PC-01", "IP": "192.168.1.10", "Role": "Workstation", "Description": "" },
+    { "Name": "PC-02", "IP": "192.168.1.11", "Role": "Workstation", "Description": "" }
+  ],
+  "_comment": "Список керованих ПК. Використовується в Run-OnMultiple, Restart-Computers та ін."
+}

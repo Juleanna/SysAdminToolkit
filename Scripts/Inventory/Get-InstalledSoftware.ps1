@@ -1,8 +1,8 @@
-. "$PSScriptRoot\..\Utils\ToolkitCommon.psm1"
-
-param(
+﻿param(
     [string]$OutputPath
 )
+
+Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
 
 if (-not $OutputPath) {
     $OutputPath = Join-Path (Get-ToolkitRoot) ("InstalledSoftware_$($env:COMPUTERNAME).csv")

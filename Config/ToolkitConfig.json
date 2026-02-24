@@ -1,6 +1,18 @@
 {
-  "CompanyName": "MyCompany",
+  "CompanyName": "Dafna",
   "DefaultBackupPath": "D:/Backups",
   "Subnet": "192.168.1.",
-  "Description": "Общие настройки для SysAdminToolkit v5.0"
+  "Description": "SysAdminToolkit v5.0",
+  "LogLevel": "INFO",
+  "MaxLogSizeMB": 10,
+  "BackupRetentionDays": 30,
+  "RemoteTimeoutSec": 30,
+  "RetryCount": 3,
+  "DiskSpaceWarningPercent": 80,
+  "DiskSpaceCriticalPercent": 95,
+  "CertExpiryWarnDays": 30,
+  "CriticalServices": ["Spooler", "wuauserv", "WinDefend", "EventLog", "Dnscache"],
+  "EmailSmtp": "",
+  "EmailTo": "",
+  "EmailFrom": ""
 }

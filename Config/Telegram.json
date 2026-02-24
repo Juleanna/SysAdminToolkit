@@ -1,5 +1,6 @@
 {
-  "BotToken": "8552348479:AAFv_uIlzqdtErUEeafrLdGPV7WkNWc_mYM",
-  "ChatID": "1983194022",
-  "Enabled": true
+  "BotToken": "",
+  "ChatID": "",
+  "Enabled": false,
+  "_comment": "Задайте токен через змінну оточення SYSADMINTK_BOTTOKEN або впишіть BotToken тут"
 }

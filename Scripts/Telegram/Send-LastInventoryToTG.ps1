@@ -1,4 +1,4 @@
-. "$PSScriptRoot\..\Utils\ToolkitCommon.psm1"
+﻿Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
 
 $root = Get-ToolkitRoot
 $inventoryPath = $root

@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [string]$ComputerName,
 
@@ -17,12 +17,12 @@ if ($PSCmdlet.ParameterSetName -eq 'CommandText') {
     $ScriptBlock = [ScriptBlock]::Create($CommandText)
 }
 
-Write-Host "Выполняю команду на $ComputerName..."
+Write-Host "Виконую команду на $ComputerName..."
 
 try {
     Invoke-Command -ComputerName $ComputerName -ScriptBlock $ScriptBlock -ArgumentList $ArgumentList -ErrorAction Stop
-    Write-Host "Команда завершена."
+    Write-Host "Команду завершено." -ForegroundColor Green
 } catch {
-    Write-Error "Ошибка удалённого выполнения: $($_.Exception.Message)"
+    Write-Error "Помилка віддаленого виконання: $($_.Exception.Message)"
     exit 1
 }

@@ -1,12 +1,15 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [string]$ComputerName
 )
 
+Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
+
 $tempName = "RemoteLogs_$((Get-Random))"
 $remoteTemp = "C:\Windows\Temp\$tempName"
+$localDest = Join-Path (Get-ToolkitRoot) "RemoteLogs_$ComputerName.zip"
 
-Write-Host "Экспортируем журналы на $ComputerName в $remoteTemp..."
+Write-Host "Експортуємо журнали з $ComputerName..." -ForegroundColor Cyan
 
 try {
     Invoke-Command -ComputerName $ComputerName -ScriptBlock {
@@ -17,12 +20,12 @@ try {
         Compress-Archive -Path (Join-Path $remoteTemp '*') -DestinationPath ("$remoteTemp.zip") -Force
     } -ArgumentList $remoteTemp -ErrorAction Stop
 
-    $localDest = ".\RemoteLogs_$ComputerName.zip"
     Copy-Item "\\$ComputerName\C$\Windows\Temp\$tempName.zip" $localDest -Force -ErrorAction Stop
 
-    Write-Host "Архив получен: $localDest"
+    Write-Host "Архів отримано: $localDest" -ForegroundColor Green
 } catch {
-    Write-Error "Ошибка при сборе логов: $($_.Exception.Message)"
+    Write-Error "Помилка при зборі логів: $($_.Exception.Message)"
+    exit 1
 } finally {
     Invoke-Command -ComputerName $ComputerName -ScriptBlock {
         param($remoteTemp)

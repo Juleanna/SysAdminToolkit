@@ -1,4 +1,10 @@
-﻿function Invoke-WithProgress {
+﻿$principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Error "Потрібні права адміністратора для SFC/DISM."
+    exit 1
+}
+
+function Invoke-WithProgress {
     param(
         [string]$FilePath,
         [string]$Arguments,
@@ -20,13 +26,16 @@
 
     Write-Output ("PROGRESS: {0}" -f $EndPercent)
 
+    if ($p.ExitCode -ne 0) {
+        Write-Warning "$Activity завершено з кодом: $($p.ExitCode)"
+    }
+
     Get-Content $tmp.FullName | ForEach-Object { Write-Output $_ }
     Remove-Item $tmp -Force -ErrorAction SilentlyContinue
 }
 
-Write-Output "Запускаю проверку системных файлов (SFC)..."
+Write-Output "Запускаю перевірку системних файлів (SFC)..."
 Invoke-WithProgress -FilePath "sfc.exe" -Arguments "/scannow" -Activity "SFC /scannow" -StartPercent 0 -EndPercent 50 -TickSeconds 3
 
-Write-Output "`nЗапускаю восстановление образа (DISM)..."
+Write-Output "`nЗапускаю відновлення образу (DISM)..."
 Invoke-WithProgress -FilePath "DISM.exe" -Arguments "/Online /Cleanup-Image /RestoreHealth" -Activity "DISM /RestoreHealth" -StartPercent 50 -EndPercent 100 -TickSeconds 5
-

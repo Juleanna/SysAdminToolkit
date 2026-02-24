@@ -1,6 +1,12 @@
-param(
-    [string]$PrinterPath="\\server\HP-LaserJet"
+﻿param(
+    [Parameter(Mandatory=$true)]
+    [string]$PrinterPath
 )
 
-rundll32 printui.dll,PrintUIEntry /in /n $PrinterPath
-Write-Host "Принтер подключен: $PrinterPath"
+try {
+    Add-Printer -ConnectionName $PrinterPath -ErrorAction Stop
+    Write-Host "Принтер підключено: $PrinterPath" -ForegroundColor Green
+} catch {
+    Write-Error "Не вдалося додати принтер: $($_.Exception.Message)"
+    exit 1
+}

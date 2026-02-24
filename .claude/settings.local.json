@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell.exe -NoProfile -Command '$content = Get-Content \"\"SysAdminToolkit.GUI.ps1\"\" -Raw -Encoding UTF8; [System.IO.File]::WriteAllText\\(\"\"SysAdminToolkit.GUI.ps1\"\", $content, [System.Text.UTF8Encoding]::new\\($true\\)\\)')",
+      "Bash(powershell -NoProfile -Command \":*)",
+      "Bash(while read -r script)",
+      "Bash(do)",
+      "Bash(if [ ! -f \"Scripts/$script\" ])",
+      "Bash(then)",
+      "Bash(echo \"MISSING: $script\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(powershell -NoProfile:*)"
+    ]
+  }
+}

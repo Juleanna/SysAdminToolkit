@@ -1,4 +1,4 @@
-param(
+п»їparam(
     [ValidateSet('Status','Enable','Disable','Toggle')]
     [string]$Mode = 'Toggle',
     [ValidateSet('Domain','Private','Public','All')]
@@ -9,7 +9,7 @@ $needsAdmin = $Mode -ne 'Status'
 if ($needsAdmin) {
     $principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
     if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-        Write-Error "Требуются права администратора для изменения брандмауэра."
+        Write-Error "РџРѕС‚СЂС–Р±РЅС– РїСЂР°РІР° Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР° РґР»СЏ Р·РјС–РЅРё Р±СЂР°РЅРґРјР°СѓРµСЂР°."
         exit 1
     }
 }
@@ -22,19 +22,19 @@ function Show-Status($pf) {
             Select-Object Name,Enabled,DefaultInboundAction,DefaultOutboundAction |
             Format-Table -AutoSize
     } catch {
-        Write-Error "Не удалось получить статус брандмауэра: $($_.Exception.Message)"
+        Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ РѕС‚СЂРёРјР°С‚Рё СЃС‚Р°С‚СѓСЃ Р±СЂР°РЅРґРјР°СѓРµСЂР°: $($_.Exception.Message)"
     }
 }
 
 try {
     $current = Get-NetFirewallProfile -Profile $profiles -ErrorAction Stop
 } catch {
-    Write-Error "Не удалось получить текущий статус брандмауэра: $($_.Exception.Message)"
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ РѕС‚СЂРёРјР°С‚Рё РїРѕС‚РѕС‡РЅРёР№ СЃС‚Р°С‚СѓСЃ Р±СЂР°РЅРґРјР°СѓРµСЂР°: $($_.Exception.Message)"
     exit 1
 }
 
 if ($Mode -eq 'Status') {
-    Write-Host "Текущий статус брандмауэра:" -ForegroundColor Cyan
+    Write-Host "РџРѕС‚РѕС‡РЅРёР№ СЃС‚Р°С‚СѓСЃ Р±СЂР°РЅРґРјР°СѓРµСЂР°:" -ForegroundColor Cyan
     Show-Status $profiles
     exit 0
 }
@@ -46,14 +46,14 @@ $targetEnabled = switch ($Mode) {
     'Toggle' { -not $anyEnabled }
 }
 
-# При включении пробуем поднять службы BFE и MpsSvc, иначе Set-NetFirewallProfile не сработает.
+# Р”Р»СЏ СѓРІС–РјРєРЅРµРЅРЅСЏ РїРѕС‚СЂС–Р±РЅРѕ Р·Р°РїСѓСЃС‚РёС‚Рё СЃРµСЂРІС–СЃРё BFE С‚Р° MpsSvc
 if ($targetEnabled) {
     foreach ($svcName in 'bfe','mpssvc') {
         try {
             $svc = Get-Service -Name $svcName -ErrorAction Stop
             if ($svc.Status -ne 'Running') { Start-Service -Name $svcName -ErrorAction Stop }
         } catch {
-            Write-Warning "Не удалось запустить службу ${svcName}: $($_.Exception.Message)"
+            Write-Warning "РќРµ РІРґР°Р»РѕСЃСЏ Р·Р°РїСѓСЃС‚РёС‚Рё СЃРµСЂРІС–СЃ ${svcName}: $($_.Exception.Message)"
         }
     }
 }
@@ -68,7 +68,7 @@ try {
     }
     $setOk = $true
 } catch {
-    Write-Warning "Set-NetFirewallProfile не сработал: $($_.Exception.Message). Попробую netsh advfirewall." 
+    Write-Warning "Set-NetFirewallProfile РЅРµ СЃРїСЂР°С†СЋРІР°Р»Р°: $($_.Exception.Message). РЎРїСЂРѕР±Р° С‡РµСЂРµР· netsh."
 }
 
 if (-not $setOk) {
@@ -76,19 +76,18 @@ if (-not $setOk) {
         $pName = $p.ToLower()
         $state = if ($targetEnabled) { 'on' } else { 'off' }
         try {
-            # netsh не поддерживает All разом
             netsh advfirewall set $pName state $state | Out-Null
             $setOk = $true
         } catch {
-            Write-Warning "Не удалось через netsh для профиля ${p}: $($_.Exception.Message)"
+            Write-Warning "РќРµ РІРґР°Р»РѕСЃСЏ РІРёРєРѕРЅР°С‚Рё netsh РґР»СЏ РїСЂРѕС„С–Р»СЋ ${p}: $($_.Exception.Message)"
         }
     }
 }
 
 if (-not $setOk) {
-    Write-Error "Не удалось изменить состояние брандмауэра."
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ Р·РјС–РЅРёС‚Рё РїР°СЂР°РјРµС‚СЂРё Р±СЂР°РЅРґРјР°СѓРµСЂР°."
     exit 1
 }
 
-Write-Host "Брандмауэр обновлён (Mode=$Mode, target=$targetEnabled)." -ForegroundColor Cyan
+Write-Host "Р‘СЂР°РЅРґРјР°СѓРµСЂ Р·РјС–РЅРµРЅРѕ (Mode=$Mode, target=$targetEnabled)." -ForegroundColor Cyan
 Show-Status $profiles

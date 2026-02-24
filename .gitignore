@@ -1,0 +1,15 @@
+# Generated data files
+InstalledSoftware_*.csv
+PC_Inventory_*.json
+RemoteLogs_*.zip
+
+# Logs
+Logs/
+
+# Telegram config with token
+Config/Telegram.json
+
+# Temp files
+*.tmp
+~$*
+новий*.txt

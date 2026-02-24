@@ -1,4 +1,4 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [string]$Text
 )
@@ -7,20 +7,20 @@ Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
 
 $configPath = Join-Path (Get-ToolkitRoot) "Config\Telegram.json"
 if (-not (Test-Path $configPath)) {
-    Write-Error "Telegram config not found: $configPath"
+    Write-Error "Конфіг Telegram не знайдено: $configPath"
     exit 1
 }
 
 $config = Get-Content $configPath -Encoding UTF8 | ConvertFrom-Json
 
 if (-not $config.Enabled) {
-    Write-Host "Telegram is disabled in config."
+    Write-Host "Telegram вимкнено в конфігу."
     exit
 }
 
 $token = if ($env:SYSADMINTK_BOTTOKEN) { $env:SYSADMINTK_BOTTOKEN } else { $config.BotToken }
 if (-not $token) {
-    Write-Error "Bot token is not set (env SYSADMINTK_BOTTOKEN or BotToken in config)."
+    Write-Error "Не задано токен бота (змінна SYSADMINTK_BOTTOKEN або BotToken в конфігу)."
     exit 1
 }
 
@@ -35,8 +35,8 @@ try {
     if (-not $response.ok) {
         throw "Telegram API error: $($response.description)"
     }
-    Write-Host "Message sent to Telegram."
+    Write-Host "Повідомлення надіслано в Telegram." -ForegroundColor Green
 } catch {
-    Write-Error "Failed to send message: $($_.Exception.Message)"
+    Write-Error "Не вдалося надіслати повідомлення: $($_.Exception.Message)"
     exit 1
 }

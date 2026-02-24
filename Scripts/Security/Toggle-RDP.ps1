@@ -1,4 +1,4 @@
-param(
+п»їparam(
     [ValidateSet('Enable','Disable','Toggle','Status')]
     [string]$Mode = 'Toggle'
 )
@@ -6,7 +6,7 @@ param(
 $principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 $requiresAdmin = $Mode -ne 'Status'
 if ($requiresAdmin -and -not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Error "Требуются права администратора для управления RDP."
+    Write-Error "РџРѕС‚СЂС–Р±РЅС– РїСЂР°РІР° Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР° РґР»СЏ РєРµСЂСѓРІР°РЅРЅСЏ RDP."
     exit 1
 }
 
@@ -17,12 +17,12 @@ try {
     $currentDeny = (Get-ItemProperty -Path $tsPath -Name 'fDenyTSConnections' -ErrorAction Stop).fDenyTSConnections
     $currentNla  = (Get-ItemProperty -Path $nlaPath -Name 'UserAuthentication' -ErrorAction Stop).UserAuthentication
 } catch {
-    Write-Error "Не удалось прочитать состояние RDP: $($_.Exception.Message)"
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ РїСЂРѕС‡РёС‚Р°С‚Рё РїР°СЂР°РјРµС‚СЂРё RDP: $($_.Exception.Message)"
     exit 1
 }
 
 if ($Mode -eq 'Status') {
-    Write-Host "RDP включён: $([bool](1 - $currentDeny))" -ForegroundColor Cyan
+    Write-Host "RDP СѓРІС–РјРєРЅРµРЅРѕ: $([bool](1 - $currentDeny))" -ForegroundColor Cyan
     Write-Host "NLA: $([bool]$currentNla)" -ForegroundColor Cyan
     exit 0
 }
@@ -40,24 +40,22 @@ try {
     Set-ItemProperty -Path $tsPath -Name 'fDenyTSConnections' -Value $targetDeny -ErrorAction Stop
     Set-ItemProperty -Path $nlaPath -Name 'UserAuthentication' -Value $targetNla -ErrorAction Stop
 } catch {
-    Write-Error "Не удалось изменить состояние RDP: $($_.Exception.Message)"
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ Р·РјС–РЅРёС‚Рё РїР°СЂР°РјРµС‚СЂРё RDP: $($_.Exception.Message)"
     exit 1
 }
 
-if ($targetDeny -eq 0) {
+# РћРЅРѕРІР»РµРЅРЅСЏ РїСЂР°РІРёР» Р±СЂР°РЅРґРјР°СѓРµСЂР° РґР»СЏ РїРѕСЂС‚Сѓ 3389
+$rdpRules = Get-NetFirewallRule -ErrorAction SilentlyContinue |
+    Where-Object { $_.DisplayName -like '*Remote Desktop*' -or $_.Name -like '*rdp*' -or $_.DisplayGroup -like '*Remote Desktop*' }
+if ($rdpRules) {
     try {
-        Get-NetFirewallRule -DisplayGroup 'Remote Desktop' -ErrorAction Stop | Set-NetFirewallRule -Enabled True
+        $state = if ($targetDeny -eq 0) { 'True' } else { 'False' }
+        $rdpRules | Set-NetFirewallRule -Enabled $state -ErrorAction Stop
     } catch {
-        Write-Warning "Не удалось включить правила брандмауэра для RDP: $($_.Exception.Message)"
-    }
-} else {
-    try {
-        Get-NetFirewallRule -DisplayGroup 'Remote Desktop' -ErrorAction Stop | Set-NetFirewallRule -Enabled False
-    } catch {
-        Write-Warning "Не удалось отключить правила брандмауэра для RDP: $($_.Exception.Message)"
+        Write-Warning "РќРµ РІРґР°Р»РѕСЃСЏ РѕРЅРѕРІРёС‚Рё РїСЂР°РІРёР»Р° Р±СЂР°РЅРґРјР°СѓРµСЂР° РґР»СЏ RDP: $($_.Exception.Message)"
     }
 }
 
-$finalState = if ($targetDeny -eq 0) { 'включён' } else { 'выключен' }
-$finalNla   = if ($targetNla -eq 1) { 'включена' } else { 'выключена' }
+$finalState = if ($targetDeny -eq 0) { 'РЈРІС–РјРєРЅРµРЅРѕ' } else { 'Р’РёРјРєРЅРµРЅРѕ' }
+$finalNla   = if ($targetNla -eq 1) { 'РЈРІС–РјРєРЅРµРЅРѕ' } else { 'Р’РёРјРєРЅРµРЅРѕ' }
 Write-Host "RDP $finalState. NLA $finalNla." -ForegroundColor Green

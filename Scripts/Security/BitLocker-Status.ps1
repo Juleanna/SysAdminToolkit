@@ -1,17 +1,23 @@
+п»ї$principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Error "РџРѕС‚СЂС–Р±РЅС– РїСЂР°РІР° Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР° РґР»СЏ РїРµСЂРµРІС–СЂРєРё BitLocker."
+    exit 1
+}
+
 if (-not (Get-Command Get-BitLockerVolume -ErrorAction SilentlyContinue)) {
-    Write-Error "Команда Get-BitLockerVolume недоступна (требует BitLocker / модуль BitLocker)."
+    Write-Error "РљРѕРјР°РЅРґР»РµС‚ Get-BitLockerVolume РЅРµРґРѕСЃС‚СѓРїРЅРёР№ (РїРѕС‚СЂС–Р±РЅР° С„СѓРЅРєС†С–СЏ BitLocker)."
     exit 1
 }
 
 try {
     $volumes = Get-BitLockerVolume -ErrorAction Stop
 } catch {
-    Write-Error "Не удалось получить статус BitLocker: $($_.Exception.Message)"
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ РѕС‚СЂРёРјР°С‚Рё СЃС‚Р°С‚СѓСЃ BitLocker: $($_.Exception.Message)"
     exit 1
 }
 
 if (-not $volumes) {
-    Write-Host "Томов не найдено." -ForegroundColor Yellow
+    Write-Host "РўРѕРјС–РІ РЅРµ Р·РЅР°Р№РґРµРЅРѕ." -ForegroundColor Yellow
     exit 0
 }
 

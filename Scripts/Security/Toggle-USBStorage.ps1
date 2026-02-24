@@ -1,4 +1,4 @@
-param(
+﻿param(
     [ValidateSet('Enable','Disable','Toggle')]
     [string]$Mode = 'Toggle'
 )

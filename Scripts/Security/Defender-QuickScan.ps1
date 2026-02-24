@@ -1,36 +1,41 @@
-$principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+п»ї$principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if (-not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
-    Write-Error "Требуются права администратора для запуска проверки Defender."
+    Write-Error "РџРѕС‚СЂС–Р±РЅС– РїСЂР°РІР° Р°РґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂР° РґР»СЏ СЃРєР°РЅСѓРІР°РЅРЅСЏ Defender."
     exit 1
 }
 
 if (-not (Get-Command Start-MpScan -ErrorAction SilentlyContinue)) {
-    Write-Error "Модуль Defender (Defender/WindowsSecurity) недоступен на этой системе."
+    Write-Error "РЎРєР°РЅРµСЂ Defender РЅРµРґРѕСЃС‚СѓРїРЅРёР№ РЅР° С†С–Р№ СЃРёСЃС‚РµРјС–."
     exit 1
 }
 
 $svc = Get-Service -Name WinDefend -ErrorAction SilentlyContinue
 if (-not $svc) {
-    Write-Error "Сервис WinDefend не найден."
+    Write-Error "РЎРµСЂРІС–СЃ WinDefend РЅРµ Р·РЅР°Р№РґРµРЅРѕ."
     exit 1
 }
 
 if ($svc.Status -ne 'Running') {
     try {
         Start-Service -Name WinDefend -ErrorAction Stop
-        Write-Host "WinDefend был запущен." -ForegroundColor Yellow
+        Write-Host "WinDefend Р·Р°РїСѓС‰РµРЅРѕ." -ForegroundColor Yellow
     } catch {
-        Write-Error "Не удалось запустить WinDefend: $($_.Exception.Message)"
+        Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ Р·Р°РїСѓСЃС‚РёС‚Рё WinDefend: $($_.Exception.Message)"
         exit 1
     }
 }
 
 try {
-    Write-Host "Стартует быстрая проверка Defender..." -ForegroundColor Cyan
+    Write-Host "Р—Р°РїСѓСЃРєР°СЋ С€РІРёРґРєРµ СЃРєР°РЅСѓРІР°РЅРЅСЏ Defender..." -ForegroundColor Cyan
     Start-MpScan -ScanType QuickScan -ErrorAction Stop
-    Write-Host "Быстрая проверка завершена." -ForegroundColor Green
-    Get-MpThreat | Select-Object ThreatName,Resources,DetectionTime,ActionSuccess | Format-Table -AutoSize
+    Write-Host "РЁРІРёРґРєРµ СЃРєР°РЅСѓРІР°РЅРЅСЏ Р·Р°РІРµСЂС€РµРЅРѕ." -ForegroundColor Green
+    $threats = Get-MpThreat -ErrorAction SilentlyContinue
+    if ($threats) {
+        $threats | Select-Object ThreatName,Resources,DetectionTime,ActionSuccess | Format-Table -AutoSize
+    } else {
+        Write-Host "Р—Р°РіСЂРѕР· РЅРµ РІРёСЏРІР»РµРЅРѕ." -ForegroundColor Green
+    }
 } catch {
-    Write-Error "Не удалось выполнить проверку: $($_.Exception.Message)"
+    Write-Error "РќРµ РІРґР°Р»РѕСЃСЏ Р·Р°РїСѓСЃС‚РёС‚Рё СЃРєР°РЅСѓРІР°РЅРЅСЏ: $($_.Exception.Message)"
     exit 1
 }

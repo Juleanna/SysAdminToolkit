@@ -1,10 +1,10 @@
-Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
-
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [string]$Source,
     [string]$Dest
 )
+
+Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
 
 $cfg = Get-ToolkitConfig
 if (-not $Dest) {

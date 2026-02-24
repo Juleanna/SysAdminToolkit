@@ -448,3 +448,176 @@ Not all parse errors were reported.  Correct the reported errors and try again.
 2025-11-21 11:02:10	Успешно: Статус брандмауэра (вкл/выкл)
 2025-11-21 11:02:18	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
 2025-11-21 11:02:19	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:03:46	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 11:03:46	Ошибка: Missing an argument for parameter 'RedirectStandardOutput'. Specify a parameter of type 'System.String' and try again.
+2025-11-21 11:03:52	Старт: BitLocker статус (D:\SysAdminToolkit\Scripts\Security\BitLocker-Status.ps1)
+2025-11-21 11:03:53	Успешно: BitLocker статус
+2025-11-21 11:04:12	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:04:13	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:04:16	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:04:18	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:04:22	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:04:23	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:04:25	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 11:04:25	Ошибка: Missing an argument for parameter 'RedirectStandardOutput'. Specify a parameter of type 'System.String' and try again.
+2025-11-21 11:09:30	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 11:09:31	Успешно: Политика паролей (отчёт)
+2025-11-21 11:10:39	Старт: BitLocker статус (D:\SysAdminToolkit\Scripts\Security\BitLocker-Status.ps1)
+2025-11-21 11:10:40	Успешно: BitLocker статус
+2025-11-21 11:11:50	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 11:11:51	Успешно: Вкл/выкл USB-накопители
+2025-11-21 11:11:52	Старт: Вкл/выкл USB-накопители (D:\SysAdminToolkit\Scripts\Security\Toggle-USBStorage.ps1)
+2025-11-21 11:11:52	Успешно: Вкл/выкл USB-накопители
+2025-11-21 11:11:54	Старт: Локальные администраторы (D:\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2025-11-21 11:11:59	Успешно: Локальные администраторы
+2025-11-21 11:12:57	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 11:12:58	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 11:12:59	Старт: Статус брандмауэра (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Firewall-Profile.ps1)
+2025-11-21 11:13:00	Успешно: Статус брандмауэра (вкл/выкл)
+2025-11-21 11:13:02	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:13:03	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:13:05	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:13:06	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:13:07	Старт: RDP + NLA (вкл/выкл) (D:\SysAdminToolkit\Scripts\Security\Toggle-RDP.ps1)
+2025-11-21 11:13:08	Успешно: RDP + NLA (вкл/выкл)
+2025-11-21 11:13:10	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 11:13:10	Успешно: Политика паролей (отчёт)
+2025-11-21 11:15:46	Старт: Отчёт по событиям безопасности (D:\SysAdminToolkit\Scripts\Security\Audit-Report.ps1)
+2025-11-21 11:15:49	Успешно: Отчёт по событиям безопасности
+2025-11-21 11:16:05	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:16:06	Ошибка: At D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1:18 char:51
++         Write-Warning "Не удалось изменить службу $name: $($_.Excepti ...
++                                                   ~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1:28 char:30
++         SMB1_Disabled = $smb ? (-not $smb.EnableSMB1Protocol) : $null
++                              ~
+Unexpected token '?' in expression or statement.
+
+At D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1:28 char:29
++         SMB1_Disabled = $smb ? (-not $smb.EnableSMB1Protocol) : $null
++                             ~
+The hash literal was incomplete.
+
+At D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1:30 char:7
++     } | Format-List
++       ~
+An empty pipe element is not allowed.
+
+At D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1:31 char:1
++ }
++ ~
+Unexpected token '}' in expression or statement.
+2025-11-21 11:18:07	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:18:07	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:27:07	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:27:07	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:27:10	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:27:11	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:27:13	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:27:13	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:48:01	Старт: Отчёт по событиям безопасности (D:\SysAdminToolkit\Scripts\Security\Audit-Report.ps1)
+2025-11-21 11:48:04	Успешно: Отчёт по событиям безопасности
+2025-11-21 11:49:44	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:49:44	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:49:49	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:49:49	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:49:51	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:49:52	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:50:04	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 11:50:04	Ошибка: At D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1:36 char:45
++         Write-Warning "Не удалось применить $sub: $($_.Exception.Mess ...
++                                             ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+2025-11-21 11:50:25	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 11:50:25	Успешно: WinRM/SMB/NTLM (статус/жёстче)
+2025-11-21 11:50:39	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 11:50:39	Ошибка: At D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1:36 char:45
++         Write-Warning "Не удалось применить $sub: $($_.Exception.Mess ...
++                                             ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+2025-11-21 11:53:05	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 11:53:05	Успешно: Аудит-политики (применить)
+2025-11-21 12:05:47	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 12:05:47	Успешно: Аудит-политики (применить)
+2025-11-21 12:05:52	Старт: LSA/SmartScreen/кэш паролей (D:\SysAdminToolkit\Scripts\Security\AccountProtection.ps1)
+2025-11-21 12:05:53	Успешно: LSA/SmartScreen/кэш паролей
+2025-11-21 12:06:00	Старт: Авторуны/службы (отчёт/отключить) (D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1)
+2025-11-21 12:06:01	Ошибка: At D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1:22 char:45
++         Write-Warning "Не удалось прочитать $key: $($_.Exception.Mess ...
++                                             ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1:46 char:49
++ ...  Write-Error "Не удалось изменить службу $DisableServiceName: $($_.Ex ...
++                                              ~~~~~~~~~~~~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+
+At D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1:55 char:50
++ ...    Write-Error "Не удалось отключить задачу $DisableTaskPath: $($_.Ex ...
++                                                 ~~~~~~~~~~~~~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+2025-11-21 12:06:22	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 12:06:22	Успешно: Аудит-политики (применить)
+2025-11-21 12:07:39	Старт: Авторуны/службы (отчёт/отключить) (D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1)
+2025-11-21 12:07:41	Успешно: Авторуны/службы (отчёт/отключить)
+2025-11-21 12:07:57	Старт: Обновления и сигнатуры (D:\SysAdminToolkit\Scripts\Security\SecurityUpdates.ps1)
+2025-11-21 12:07:58	Успешно: Обновления и сигнатуры
+2025-11-21 12:08:47	Старт: Проверка производительности (D:\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2025-11-21 12:08:49	Успешно: Проверка производительности
+2025-11-21 12:14:57	Старт: Локальные пользователи (отчёт) (D:\SysAdminToolkit\Scripts\Security\LocalUsers-Report.ps1)
+2025-11-21 12:14:58	Успешно: Локальные пользователи (отчёт)
+2025-11-21 12:15:15	Старт: Локальные пользователи (создать/вкл/выкл/пароль) (D:\SysAdminToolkit\Scripts\Security\LocalUser-Manage.ps1)
+2025-11-21 12:16:12	Старт: Обновления и сигнатуры (D:\SysAdminToolkit\Scripts\Security\SecurityUpdates.ps1)
+2025-11-21 12:16:13	Успешно: Обновления и сигнатуры
+2025-11-21 12:16:29	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 12:16:30	Успешно: Политика паролей (отчёт)
+2025-11-21 12:22:49	Старт: Очистить временные файлы (D:\SysAdminToolkit\Scripts\Utils\Clean-Temp.ps1)
+2025-11-21 12:22:50	Успешно: Очистить временные файлы
+2025-11-21 12:22:54	Старт: Сбор логов (D:\SysAdminToolkit\Scripts\Utils\Collect-Logs.ps1)
+2025-11-21 12:22:55	Ошибка: The term 'param' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+2025-11-21 12:23:01	Старт: Сканирование LAN (D:\SysAdminToolkit\Scripts\Network\Scan-LAN.ps1)
+2025-11-21 12:23:02	Ошибка: At D:\SysAdminToolkit\Scripts\Network\Scan-LAN.ps1:16 char:43
++         Write-Host "$ip вЂ” РѕС‚РІРµС‚РёР»"
++                                           ~
+The string is missing the terminator: ".
+
+At D:\SysAdminToolkit\Scripts\Network\Scan-LAN.ps1:15 char:60
++     if (Test-Connection -Count 1 -Quiet -ComputerName $ip) {
++                                                            ~
+Missing closing '}' in statement block or type definition.
+
+At D:\SysAdminToolkit\Scripts\Network\Scan-LAN.ps1:13 char:25
++ 1..254 | ForEach-Object {
++                         ~
+Missing closing '}' in statement block or type definition.
+2025-11-21 12:23:06	Старт: Проверка сети (D:\SysAdminToolkit\Scripts\Network\Test-Network.ps1)
+2025-11-21 12:23:17	Успешно: Проверка сети
+2025-11-21 12:23:55	Старт: Локальные пользователи (отчёт) (D:\SysAdminToolkit\Scripts\Security\LocalUsers-Report.ps1)
+2025-11-21 12:23:55	Успешно: Локальные пользователи (отчёт)
+2025-11-21 12:27:24	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 12:27:24	Успешно: Аудит-политики (применить)
+2025-11-21 12:27:49	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 12:27:50	Ошибка: At D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1:35 char:17
++     Write-Host "$key: $val"
++                 ~~~~~
+Variable reference is not valid. ':' was not followed by a valid variable name character. Consider using ${} to delimit the name.
+2025-11-21 13:50:39	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 13:50:39	Успешно: Аудит-политики (применить)
+2025-11-21 13:50:44	Старт: Авторуны/службы (отчёт/отключить) (D:\SysAdminToolkit\Scripts\Security\Autoruns-Report.ps1)
+2025-11-21 13:50:46	Успешно: Авторуны/службы (отчёт/отключить)
+2025-11-21 15:04:24	Старт: Аудит-политики (применить) (D:\SysAdminToolkit\Scripts\Security\AuditPolicy-Apply.ps1)
+2025-11-21 15:04:25	Успешно: Аудит-политики (применить)
+2025-11-21 15:04:32	Старт: Отчёт по событиям безопасности (D:\SysAdminToolkit\Scripts\Security\Audit-Report.ps1)
+2025-11-21 15:04:35	Успешно: Отчёт по событиям безопасности
+2025-11-21 15:04:37	Старт: Политика паролей (отчёт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2025-11-21 15:04:38	Успешно: Политика паролей (отчёт)
+2025-11-21 15:04:47	Старт: BitLocker статус (D:\SysAdminToolkit\Scripts\Security\BitLocker-Status.ps1)
+2025-11-21 15:04:49	Успешно: BitLocker статус
+2025-11-21 15:05:08	Старт: Быстрая проверка Defender (D:\SysAdminToolkit\Scripts\Security\Defender-QuickScan.ps1)
+2025-11-21 15:05:52	Успешно: Быстрая проверка Defender
+2025-11-21 15:06:03	Старт: Отчёт по событиям безопасности (D:\SysAdminToolkit\Scripts\Security\Audit-Report.ps1)
+2025-11-21 15:06:06	Успешно: Отчёт по событиям безопасности
+2025-11-21 15:06:32	Старт: WinRM/SMB/NTLM (статус/жёстче) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
+2025-11-21 15:06:32	Успешно: WinRM/SMB/NTLM (статус/жёстче)
