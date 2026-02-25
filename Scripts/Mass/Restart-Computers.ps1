@@ -1,4 +1,18 @@
-﻿param(
+﻿<#
+.SYNOPSIS
+    Перезавантаження групи комп'ютерів зі списку.
+.DESCRIPTION
+    Читає список ПК з файлу або Hosts.json та перезавантажує їх.
+    Без -Force лише показує список (WhatIf-режим).
+.PARAMETER ListPath
+    Шлях до файлу зі списком ПК (по одному на рядок).
+.PARAMETER Force
+    Виконати перезавантаження без додаткового підтвердження.
+.EXAMPLE
+    .\Restart-Computers.ps1 -Force
+#>
+[CmdletBinding(SupportsShouldProcess=$true, ConfirmImpact='High')]
+param(
     [string]$ListPath,
     [switch]$Force
 )
@@ -29,11 +43,13 @@ if (-not $Force) {
 
 foreach ($pc in $pcs) {
     $pc = $pc.Trim()
-    Write-Host "Перезавантаження $pc..." -NoNewline
-    try {
-        Restart-Computer -ComputerName $pc -Force -ErrorAction Stop
-        Write-Host " OK" -ForegroundColor Green
-    } catch {
-        Write-Host " ПОМИЛКА: $($_.Exception.Message)" -ForegroundColor Red
+    if ($PSCmdlet.ShouldProcess($pc, "Перезавантажити комп'ютер")) {
+        Write-Host "Перезавантаження $pc..." -NoNewline
+        try {
+            Restart-Computer -ComputerName $pc -Force -ErrorAction Stop
+            Write-Host " OK" -ForegroundColor Green
+        } catch {
+            Write-Host " ПОМИЛКА: $($_.Exception.Message)" -ForegroundColor Red
+        }
     }
 }

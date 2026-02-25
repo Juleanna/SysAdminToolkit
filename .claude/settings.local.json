@@ -10,7 +10,11 @@
       "Bash(echo \"MISSING: $script\")",
       "Bash(fi)",
       "Bash(done)",
-      "Bash(powershell -NoProfile:*)"
+      "Bash(powershell -NoProfile:*)",
+      "Bash(ls -la /d/SysAdminToolkit/Scripts/*/)",
+      "Bash(find /d/SysAdminToolkit/Scripts -name \"*.ps1\" -type f -exec grep -l \"catch\\\\|ErrorAction\\\\|try\" {} ;)",
+      "Bash(powershell -ExecutionPolicy Bypass -File _apply_bom.ps1)",
+      "Bash(powershell -ExecutionPolicy Bypass -File _verify.ps1)"
     ]
   }
 }

@@ -1,0 +1,36 @@
+{
+  "Roles": {
+    "Admin": {
+      "Description": "Повний доступ до всіх категорій та операцій",
+      "AllowedCategories": ["*"]
+    },
+    "Operator": {
+      "Description": "Операційні задачі: моніторинг, бекапи, мережа, сервіси та інше",
+      "AllowedCategories": [
+        "monitoring",
+        "inventory",
+        "network",
+        "backup",
+        "utils",
+        "telegram",
+        "printers",
+        "profiles",
+        "services",
+        "disks"
+      ]
+    },
+    "Auditor": {
+      "Description": "Тільки перегляд: інвентаризація, моніторинг, звіти, безпека (read-only)",
+      "AllowedCategories": [
+        "inventory",
+        "monitoring",
+        "reports",
+        "security",
+        "certificates",
+        "scheduledtasks"
+      ]
+    }
+  },
+  "DefaultRole": "Admin",
+  "_comment": "RBAC-ролі. AllowedCategories визначає доступ до категорій скриптів. '*' = повний доступ."
+}

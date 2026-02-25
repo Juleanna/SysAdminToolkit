@@ -621,3 +621,14 @@ Variable reference is not valid. ':' was not followed by a valid variable name c
 2025-11-21 15:06:06	�������: ����� �� �������� ������������
 2025-11-21 15:06:32	�����: WinRM/SMB/NTLM (������/�����) (D:\SysAdminToolkit\Scripts\Security\RemoteAccess-Hardening.ps1)
 2025-11-21 15:06:32	�������: WinRM/SMB/NTLM (������/�����)
+2026-02-25 17:23:27	[INFO]	Старт: Членство у групі (D:\SysAdminToolkit\Scripts\ActiveDirectory\AD-GroupMembership.ps1)
+2026-02-25 17:23:27	[INFO]	Запуск AD-GroupMembership (Group=Domain Admins, Recursive=False)
+2026-02-25 17:23:27	[ERROR]	Модуль ActiveDirectory не знайдено
+2026-02-25 17:23:28	[INFO]	Успішно: Членство у групі
+2026-02-25 17:23:37	[INFO]	Старт: Адміністратори (D:\SysAdminToolkit\Scripts\Security\List-LocalAdmins.ps1)
+2026-02-25 17:23:38	[INFO]	Успішно: Адміністратори
+2026-02-25 17:23:56	[INFO]	Старт: SMART-статус (D:\SysAdminToolkit\Scripts\Disks\Disk-Health.ps1)
+2026-02-25 17:23:57	[INFO]	Disk-Health: Перевірено  диск(ів)
+2026-02-25 17:23:57	[INFO]	Успішно: SMART-статус
+2026-02-25 17:24:17	[INFO]	Старт: Перевірка продуктивності (D:\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2026-02-25 17:24:19	[INFO]	Успішно: Перевірка продуктивності
