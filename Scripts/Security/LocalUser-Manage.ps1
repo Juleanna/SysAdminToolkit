@@ -1,11 +1,14 @@
 ﻿param(
     [Parameter(Mandatory=$true)][string]$Username,
-    [ValidateSet('Create','Enable','Disable','ResetPassword','Status')]
+    [ValidateSet('Create','Enable','Disable','ResetPassword','Status','Rename','Delete')]
     [string]$Mode = 'Status',
     [string]$Password,
     [string]$Description,
+    [string]$NewName,
     [switch]$AddToAdministrators
 )
+
+Import-Module "$PSScriptRoot\..\Utils\ToolkitCommon.psm1" -Force
 
 $principal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
 if ($Mode -ne 'Status' -and -not $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
@@ -68,9 +71,68 @@ switch ($Mode) {
         if (-not $Password) { Write-Error "Вкажіть новий пароль (-Password)."; exit 1 }
         if ($hasLocalUser) {
             $sec = To-Secure $Password
-            try { Set-LocalUser -Name $Username -Password $sec -ErrorAction Stop; Write-Host "Пароль користувача $Username змінено." -ForegroundColor Green } catch { Write-Error "Не вдалося змінити пароль: $($_.Exception.Message)"; exit 1 }
+            try { Set-LocalUser -Name $Username -Password $sec -ErrorAction Stop; Write-Host "Пароль користувача $Username змінено." -ForegroundColor Green; Write-TkLog "Пароль змінено: $Username" -Level INFO } catch { Write-Error "Не вдалося змінити пароль: $($_.Exception.Message)"; exit 1 }
         } else {
-            try { net user $Username $Password; Write-Host "Пароль користувача $Username змінено (net user)." -ForegroundColor Green } catch { Write-Error "Не вдалося змінити пароль: $($_.Exception.Message)"; exit 1 }
+            try { net user $Username $Password; Write-Host "Пароль користувача $Username змінено (net user)." -ForegroundColor Green; Write-TkLog "Пароль змінено (net user): $Username" -Level INFO } catch { Write-Error "Не вдалося змінити пароль: $($_.Exception.Message)"; exit 1 }
+        }
+    }
+    'Rename' {
+        if (-not $NewName) { Write-Host "[ПОМИЛКА] Вкажіть нове ім'я (-NewName)." -ForegroundColor Red; exit 1 }
+        if ($hasLocalUser) {
+            $existing = Get-LocalUser -Name $Username -ErrorAction SilentlyContinue
+            if (-not $existing) { Write-Host "[ПОМИЛКА] Користувача '$Username' не знайдено." -ForegroundColor Red; exit 1 }
+            $conflict = Get-LocalUser -Name $NewName -ErrorAction SilentlyContinue
+            if ($conflict) { Write-Host "[ПОМИЛКА] Користувач '$NewName' вже існує." -ForegroundColor Red; exit 1 }
+            try {
+                Rename-LocalUser -Name $Username -NewName $NewName -ErrorAction Stop
+                Write-Host "[OK] Користувача '$Username' перейменовано на '$NewName'." -ForegroundColor Green
+                Write-TkLog "Перейменовано: '$Username' -> '$NewName'" -Level INFO
+            } catch {
+                Write-Host "[ПОМИЛКА] $($_.Exception.Message)" -ForegroundColor Red
+                Write-TkLog "Помилка перейменування '$Username': $($_.Exception.Message)" -Level ERROR
+                exit 1
+            }
+        } else {
+            try {
+                $wmicResult = & wmic useraccount where "Name='$Username'" rename "$NewName" 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "wmic: $wmicResult" }
+                Write-Host "[OK] Користувача '$Username' перейменовано на '$NewName' (wmic)." -ForegroundColor Green
+                Write-TkLog "Перейменовано (wmic): '$Username' -> '$NewName'" -Level INFO
+            } catch {
+                Write-Host "[ПОМИЛКА] $($_.Exception.Message)" -ForegroundColor Red
+                Write-TkLog "Помилка перейменування (wmic) '$Username': $($_.Exception.Message)" -Level ERROR
+                exit 1
+            }
+        }
+    }
+    'Delete' {
+        if ($Username -eq $env:USERNAME) {
+            Write-Host "[ПОМИЛКА] Неможливо видалити поточного користувача '$Username'." -ForegroundColor Red
+            exit 1
+        }
+        if ($hasLocalUser) {
+            $existing = Get-LocalUser -Name $Username -ErrorAction SilentlyContinue
+            if (-not $existing) { Write-Host "[ПОМИЛКА] Користувача '$Username' не знайдено." -ForegroundColor Red; exit 1 }
+            try {
+                Remove-LocalUser -Name $Username -ErrorAction Stop
+                Write-Host "[OK] Користувача '$Username' видалено." -ForegroundColor Green
+                Write-TkLog "Видалено користувача: '$Username'" -Level INFO
+            } catch {
+                Write-Host "[ПОМИЛКА] $($_.Exception.Message)" -ForegroundColor Red
+                Write-TkLog "Помилка видалення '$Username': $($_.Exception.Message)" -Level ERROR
+                exit 1
+            }
+        } else {
+            try {
+                net user $Username /delete 2>&1
+                if ($LASTEXITCODE -ne 0) { throw "net user /delete не вдалося" }
+                Write-Host "[OK] Користувача '$Username' видалено (net user)." -ForegroundColor Green
+                Write-TkLog "Видалено (net user): '$Username'" -Level INFO
+            } catch {
+                Write-Host "[ПОМИЛКА] $($_.Exception.Message)" -ForegroundColor Red
+                Write-TkLog "Помилка видалення (net user) '$Username': $($_.Exception.Message)" -Level ERROR
+                exit 1
+            }
         }
     }
 }

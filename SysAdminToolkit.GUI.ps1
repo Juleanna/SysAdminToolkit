@@ -50,6 +50,7 @@ $global:Actions = @(
     [PSCustomObject]@{ Category="Диски"; Name="Звіт простору"; Script="Disks\Disk-SpaceReport.ps1"; Desc="Детальний звіт дисків" }
     [PSCustomObject]@{ Category="Диски"; Name="Очищення старих файлів"; Script="Disks\Cleanup-OldFiles.ps1"; Desc="Видалення файлів >N днів" }
     [PSCustomObject]@{ Category="Диски"; Name="Квоти профілів"; Script="Disks\Disk-QuotaReport.ps1"; Desc="Розмір профілів" }
+    [PSCustomObject]@{ Category="Диски"; Name="Оптимізація диска"; Script="Disks\Optimize-Disk.ps1"; Desc="Дефрагментація HDD / TRIM SSD (DriveLetter=C;Mode=Analyze|Optimize|Retrim)" }
     # Сертифікати
     [PSCustomObject]@{ Category="Сертифікати"; Name="Термін сертифікатів"; Script="Certificates\Cert-ExpiryCheck.ps1"; Desc="Пошук сертифікатів що спливають" }
     [PSCustomObject]@{ Category="Сертифікати"; Name="Встановити сертифікат"; Script="Certificates\Cert-Install.ps1"; Desc="Імпорт сертифікату (CertPath=...)" }
@@ -61,6 +62,9 @@ $global:Actions = @(
     [PSCustomObject]@{ Category="Бекапи"; Name="Бекап профілів"; Script="Backup\Backup-UserProfiles.ps1"; Desc="Резервне копіювання профілів" }
     [PSCustomObject]@{ Category="Бекапи"; Name="Бекап завдань"; Script="Backup\Backup-ScheduledTask.ps1"; Desc="Експорт завдань у XML" }
     [PSCustomObject]@{ Category="Бекапи"; Name="Бекап GPO"; Script="Backup\Backup-GPO.ps1"; Desc="Резервне копіювання GPO" }
+    [PSCustomObject]@{ Category="Бекапи"; Name="Бекап реєстру"; Script="Backup\Backup-Registry.ps1"; Desc="Експорт гілок реєстру (SpecificKey=HKLM\\SOFTWARE\\...)" }
+    [PSCustomObject]@{ Category="Бекапи"; Name="Бекап драйверів"; Script="Backup\Backup-Drivers.ps1"; Desc="Експорт сторонніх драйверів для переустановки" }
+    [PSCustomObject]@{ Category="Бекапи"; Name="Очищення старих бекапів"; Script="Backup\Clean-OldBackups.ps1"; Desc="Видалення бекапів >N днів (RetentionDays=30;WhatIf=true)" }
     # Мережа
     [PSCustomObject]@{ Category="Мережа"; Name="Перевірка мережі"; Script="Network\Test-Network.ps1"; Desc="Діагностика підключення" }
     [PSCustomObject]@{ Category="Мережа"; Name="Сканування LAN"; Script="Network\Scan-LAN.ps1"; Desc="Пошук хостів у підмережі" }
@@ -93,7 +97,7 @@ $global:Actions = @(
     [PSCustomObject]@{ Category="Безпека"; Name="Defender сканування"; Script="Security\Defender-QuickScan.ps1"; Desc="Швидке сканування" }
     [PSCustomObject]@{ Category="Безпека"; Name="BitLocker"; Script="Security\BitLocker-Status.ps1"; Desc="Стан шифрування" }
     [PSCustomObject]@{ Category="Безпека"; Name="Локальні користувачі"; Script="Security\LocalUsers-Report.ps1"; Desc="Всі облікові записи" }
-    [PSCustomObject]@{ Category="Безпека"; Name="Керування користувачами"; Script="Security\LocalUser-Manage.ps1"; Desc="Створити/Вкл/Викл/Скинути" }
+    [PSCustomObject]@{ Category="Безпека"; Name="Керування користувачами"; Script="Security\LocalUser-Manage.ps1"; Desc="Mode=Create|Enable|Disable|ResetPassword|Rename|Delete;Username=...;Password=...;NewName=..." }
     [PSCustomObject]@{ Category="Безпека"; Name="Аудит безпеки"; Script="Security\Audit-Report.ps1"; Desc="Аудит Event Log" }
     [PSCustomObject]@{ Category="Безпека"; Name="WinRM/SMB/NTLM"; Script="Security\RemoteAccess-Hardening.ps1"; Desc="Посилення віддаленого доступу" }
     [PSCustomObject]@{ Category="Безпека"; Name="Аудит-політики"; Script="Security\AuditPolicy-Apply.ps1"; Desc="Політики аудиту" }
@@ -109,12 +113,16 @@ $global:Actions = @(
     # Відновлення
     [PSCustomObject]@{ Category="Відновлення"; Name="SFC + DISM"; Script="Recovery\Repair-Windows.ps1"; Desc="Перевірка системних файлів" }
     [PSCustomObject]@{ Category="Відновлення"; Name="Відновити профіль"; Script="Recovery\Restore-UserProfile.ps1"; Desc="З бекапу (BackupPath=...;Username=...)" }
+    [PSCustomObject]@{ Category="Відновлення"; Name="Перевірка диска (chkdsk)"; Script="Recovery\Repair-DiskErrors.ps1"; Desc="Перевірка та ремонт диска (DriveLetter=C;Mode=Check|Fix|Full)" }
+    [PSCustomObject]@{ Category="Відновлення"; Name="Скидання Windows Update"; Script="Recovery\Reset-WindowsUpdate.ps1"; Desc="Скидання компонентів оновлення Windows" }
+    [PSCustomObject]@{ Category="Відновлення"; Name="Точки відновлення"; Script="Recovery\Manage-RestorePoints.ps1"; Desc="Створити/переглянути/очистити (Mode=List|Create|DeleteOld)" }
     # Утиліти
     [PSCustomObject]@{ Category="Утиліти"; Name="Очистити TEMP"; Script="Utils\Clean-Temp.ps1"; Desc="Тимчасові файли (-WhatIf)" }
     [PSCustomObject]@{ Category="Утиліти"; Name="Збір логів"; Script="Utils\Collect-Logs.ps1"; Desc="Логи в архів" }
     [PSCustomObject]@{ Category="Утиліти"; Name="Інфо про систему"; Script="Utils\System-Info.ps1"; Desc="ОС, CPU, RAM, мережа" }
     [PSCustomObject]@{ Category="Утиліти"; Name="Порівняння ПК"; Script="Utils\Compare-Configs.ps1"; Desc="Відмінності двох ПК" }
     [PSCustomObject]@{ Category="Утиліти"; Name="Створити ISO"; Script="Utils\New-ISOImage.ps1"; Desc="ISO з папки (SourcePath=...;OutputPath=...)" }
+    [PSCustomObject]@{ Category="Утиліти"; Name="Очищення системного сміття"; Script="Utils\Clean-SystemJunk.ps1"; Desc="Комплексне очищення: temp, prefetch, кеш, дампи, кошик (-WhatIf)" }
     # Звіти
     [PSCustomObject]@{ Category="Звіти"; Name="Щоденний звіт"; Script="Reports\Daily-Report.ps1"; Desc="Зведений звіт: диски, сервіси, безпека" }
     [PSCustomObject]@{ Category="Звіти"; Name="Знімок/Порівняння"; Script="Reports\Compare-Snapshot.ps1"; Desc="Базовий знімок або diff" }

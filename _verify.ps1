@@ -1,4 +1,4 @@
-$scripts = @(
+﻿$scripts = @(
   'Inventory\Get-PC-Inventory.ps1',
   'Inventory\Get-InstalledSoftware.ps1',
   'Telegram\Send-LastInventoryToTG.ps1',
@@ -15,6 +15,7 @@ $scripts = @(
   'Disks\Disk-SpaceReport.ps1',
   'Disks\Cleanup-OldFiles.ps1',
   'Disks\Disk-QuotaReport.ps1',
+  'Disks\Optimize-Disk.ps1',
   'Certificates\Cert-ExpiryCheck.ps1',
   'Certificates\Cert-Install.ps1',
   'ScheduledTasks\ScheduledTask-Report.ps1',
@@ -23,6 +24,9 @@ $scripts = @(
   'Backup\Backup-UserProfiles.ps1',
   'Backup\Backup-ScheduledTask.ps1',
   'Backup\Backup-GPO.ps1',
+  'Backup\Backup-Registry.ps1',
+  'Backup\Backup-Drivers.ps1',
+  'Backup\Clean-OldBackups.ps1',
   'Network\Test-Network.ps1',
   'Network\Scan-LAN.ps1',
   'Recovery\Repair-Network.ps1',
@@ -64,11 +68,15 @@ $scripts = @(
   'Security\Sign-Scripts.ps1',
   'Recovery\Repair-Windows.ps1',
   'Recovery\Restore-UserProfile.ps1',
+  'Recovery\Repair-DiskErrors.ps1',
+  'Recovery\Reset-WindowsUpdate.ps1',
+  'Recovery\Manage-RestorePoints.ps1',
   'Utils\Clean-Temp.ps1',
   'Utils\Collect-Logs.ps1',
   'Utils\System-Info.ps1',
   'Utils\Compare-Configs.ps1',
   'Utils\New-ISOImage.ps1',
+  'Utils\Clean-SystemJunk.ps1',
   'Reports\Daily-Report.ps1',
   'Reports\Compare-Snapshot.ps1',
   'Telegram\Test-TGMessage.ps1',
@@ -121,7 +129,7 @@ else { Write-Host "MISSING:" -ForegroundColor Red; $missingDocs | ForEach-Object
 # Check BOM on key files
 Write-Host ""
 Write-Host "--- BOM check (sample) ---"
-$bomFiles = @('SysAdminToolkit.GUI.ps1','Scripts\Utils\ToolkitCommon.psm1','Scripts\ActiveDirectory\AD-UserReport.ps1','Scripts\Reports\Daily-Report.ps1')
+$bomFiles = @('SysAdminToolkit.GUI.ps1','Scripts\Utils\ToolkitCommon.psm1','Scripts\Recovery\Repair-DiskErrors.ps1','Scripts\Backup\Backup-Registry.ps1','Scripts\Utils\Clean-SystemJunk.ps1','Scripts\Disks\Optimize-Disk.ps1')
 foreach ($bf in $bomFiles) {
   $fp = Join-Path $PSScriptRoot $bf
   if (Test-Path $fp) {
