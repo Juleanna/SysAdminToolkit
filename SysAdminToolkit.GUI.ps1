@@ -383,40 +383,58 @@ $btnSchedule.Add_Click({
 # ============================================================
 #  Job execution
 # ============================================================
-$script:currentJob = $null; $script:lastOutputIndex = 0; $script:jobStartTime = $null; $script:currentActionName = ""
+$script:currentJob = $null; $script:jobStartTime = $null; $script:currentActionName = ""
 
 $script:jobTimer = New-Object Windows.Threading.DispatcherTimer
 $script:jobTimer.Interval = [TimeSpan]::FromMilliseconds(500)
 $script:jobTimer.Add_Tick({
     if ($null -eq $script:currentJob) { $script:jobTimer.Stop(); return }
+
+    # Збираємо новий вивід (без -Keep — кожен виклик повертає лише нові дані)
     try {
-        $allOutput = Receive-Job -Job $script:currentJob -Keep -ErrorAction SilentlyContinue
-        if ($allOutput) {
-            $newLines = @($allOutput)[$script:lastOutputIndex..($allOutput.Count - 1)]
-            $script:lastOutputIndex = @($allOutput).Count
-            foreach ($line in $newLines) {
+        $newOutput = @(Receive-Job -Job $script:currentJob -ErrorAction SilentlyContinue)
+        foreach ($line in $newOutput) {
+            $lineStr = "$line"
+            # Пропускаємо порожні рядки та результат-об'єкт
+            if ([string]::IsNullOrWhiteSpace($lineStr)) { continue }
+            if ($lineStr -match '^\s*$') { continue }
+            # Прогрес-бар
+            if ($lineStr -match '^PROGRESS:\s*(\d+)') { $pbStatus.Value = [math]::Min(100,[int]$Matches[1]); $lblProgress.Text = "$($Matches[1])%"; continue }
+            # Колоризація
+            $color = "#cdd6f4"
+            if ($lineStr -match '(помилка|error|fail|не вдалося)') { $color = "#f38ba8" }
+            elseif ($lineStr -match '(попередження|warning|увага)') { $color = "#fab387" }
+            elseif ($lineStr -match '(успішно|success|done|ok|завершено)') { $color = "#a6e3a1" }
+            Write-LogLine $lineStr -Color $color
+        }
+    } catch {}
+
+    # Завершення Job
+    if ($script:currentJob.State -in @("Completed","Failed","Stopped")) {
+        $script:jobTimer.Stop()
+        # Фінальний збір залишків
+        try {
+            $finalOutput = @(Receive-Job -Job $script:currentJob -ErrorAction SilentlyContinue)
+            foreach ($line in $finalOutput) {
                 $lineStr = "$line"
-                if ($lineStr -match '^PROGRESS:\s*(\d+)') { $pbStatus.Value = [math]::Min(100,[int]$Matches[1]); $lblProgress.Text = "$($Matches[1])%"; continue }
+                if ([string]::IsNullOrWhiteSpace($lineStr)) { continue }
+                if ($lineStr -match '^PROGRESS:\s*(\d+)') { continue }
                 $color = "#cdd6f4"
                 if ($lineStr -match '(помилка|error|fail|не вдалося)') { $color = "#f38ba8" }
                 elseif ($lineStr -match '(попередження|warning|увага)') { $color = "#fab387" }
                 elseif ($lineStr -match '(успішно|success|done|ok|завершено)') { $color = "#a6e3a1" }
                 Write-LogLine $lineStr -Color $color
             }
-        }
-    } catch {}
-    if ($script:currentJob.State -in @("Completed","Failed","Stopped")) {
-        $script:jobTimer.Stop()
-        $result = Receive-Job -Job $script:currentJob -ErrorAction SilentlyContinue
+        } catch {}
         $state = $script:currentJob.State
         Remove-Job $script:currentJob -Force -ErrorAction SilentlyContinue
-        $script:currentJob = $null; $script:lastOutputIndex = 0
+        $script:currentJob = $null
         $btnRun.IsEnabled = $true; $btnCancel.IsEnabled = $false
         $pbStatus.Value = 0; $lblProgress.Text = ""
         $duration = ""; if ($script:jobStartTime) { $duration = "{0:mm\:ss}" -f ((Get-Date) - $script:jobStartTime) }
         $status = "Успішно"; $logColor = "#a6e3a1"; $logLevel = "INFO"
         if ($state -eq "Stopped") { $status = "Скасовано"; $logColor = "#fab387"; $logLevel = "WARN" }
-        elseif (-not ($result -and $result.Success)) { $status = "Помилка"; $logColor = "#f38ba8"; $logLevel = "ERROR" }
+        elseif ($state -eq "Failed") { $status = "Помилка"; $logColor = "#f38ba8"; $logLevel = "ERROR" }
         Write-LogLine "--- $status ---" -Color $logColor
         Write-TkLog "$status`: $($script:currentActionName)" -Level $logLevel
         Write-TkEventLog "$status`: $($script:currentActionName)" -EntryType $(if($status -eq "Помилка"){"Error"}elseif($status -eq "Скасовано"){"Warning"}else{"Information"})
@@ -432,14 +450,14 @@ function Invoke-ToolkitScript { param([string]$RelativePath, [string]$DisplayNam
     Clear-Log; Write-LogLine "Запуск: $DisplayName" -Color "#89b4fa"; Write-LogLine $scriptPath -Color "#6c7086"; Write-LogLine "---" -Color "#45475a"
     Write-TkLog "Старт: $DisplayName ($scriptPath)" -Level INFO
     $btnRun.IsEnabled = $false; $btnCancel.IsEnabled = $true; $pbStatus.Value = 0; $lblProgress.Text = ""
-    $script:lastOutputIndex = 0; $script:jobStartTime = Get-Date; $script:currentActionName = $DisplayName
+    $script:jobStartTime = Get-Date; $script:currentActionName = $DisplayName
     $argArray = @(); foreach ($k in $ArgsHashtable.Keys) { $argArray += "-$k"; $argArray += $ArgsHashtable[$k] }
+    # *>&1 зливає всі стріми (включно з Write-Host/Information) в Output —
+    # без цього Write-Host у PS 5.1 Jobs не потрапляє в Receive-Job
     $script:currentJob = Start-Job -ScriptBlock {
-        param($sp,$dn,$aa,$wd); Set-Location $wd
-        $r = [pscustomobject]@{ Success=$false; Output=""; ErrorMessage=""; DisplayName=$dn }
-        try { $r.Output = & $sp @aa *>&1 | Out-String; $r.Success = $true } catch { $r.ErrorMessage = $_.Exception.Message }
-        return $r
-    } -ArgumentList $scriptPath,$DisplayName,$argArray,$base
+        param($sp,$aa,$wd); Set-Location $wd
+        & $sp @aa *>&1
+    } -ArgumentList $scriptPath,$argArray,$base
     $script:jobTimer.Start()
 }
 

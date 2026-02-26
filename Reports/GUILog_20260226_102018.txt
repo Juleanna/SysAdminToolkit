@@ -1,0 +1,46 @@
+﻿Запуск: SMART-статус
+D:\SysAdminToolkit\Scripts\Disks\Disk-Health.ps1
+---
+@{Success=True; Output=============================================
+  SMART-статус фізичних дисків
+============================================
+
+Назва                          Тип           Розмір ГБ Стан здоров'я   Операційний статус  
+------------------------------------------------------------------------------------------
+FORESEE 512GB SSD              SSD              476,94 Healthy         OK                  
+
+Перевірку завершено. Всього дисків: 
+; ErrorMessage=; DisplayName=SMART-статус; PSComputerName=localhost; RunspaceId=b7804319-dead-41fe-b753-c7586cc9853d; PSShowComputerName=False}
+@{Success=True; Output=============================================
+  SMART-статус фізичних дисків
+============================================
+
+Назва                          Тип           Розмір ГБ Стан здоров'я   Операційний статус  
+------------------------------------------------------------------------------------------
+FORESEE 512GB SSD              SSD              476,94 Healthy         OK                  
+
+Перевірку завершено. Всього дисків: 
+; ErrorMessage=; DisplayName=SMART-статус; PSComputerName=localhost; RunspaceId=b7804319-dead-41fe-b753-c7586cc9853d; PSShowComputerName=False}
+@{Success=True; Output=============================================
+  SMART-статус фізичних дисків
+============================================
+
+Назва                          Тип           Розмір ГБ Стан здоров'я   Операційний статус  
+------------------------------------------------------------------------------------------
+FORESEE 512GB SSD              SSD              476,94 Healthy         OK                  
+
+Перевірку завершено. Всього дисків: 
+; ErrorMessage=; DisplayName=SMART-статус; PSComputerName=localhost; RunspaceId=b7804319-dead-41fe-b753-c7586cc9853d; PSShowComputerName=False}
+@{Success=True; Output=============================================
+  SMART-статус фізичних дисків
+============================================
+
+Назва                          Тип           Розмір ГБ Стан здоров'я   Операційний статус  
+------------------------------------------------------------------------------------------
+FORESEE 512GB SSD              SSD              476,94 Healthy         OK                  
+
+Перевірку завершено. Всього дисків: 
+; ErrorMessage=; DisplayName=SMART-статус; PSComputerName=localhost; RunspaceId=b7804319-dead-41fe-b753-c7586cc9853d; PSShowComputerName=False}
+--- Успішно ---
+
+

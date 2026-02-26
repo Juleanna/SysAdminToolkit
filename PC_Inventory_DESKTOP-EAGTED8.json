@@ -1,27 +1,34 @@
 ﻿{
     "ComputerName":  "DESKTOP-EAGTED8",
-    "OS":  "Майкрософт Windows 10 Pro",
-    "OSVersion":  "10.0.19045",
-    "Manufacturer":  "Acer",
-    "Model":  "Aspire AL15-41P",
-    "CPU":  "AMD Ryzen 7 5700U with Radeon Graphics         ",
-    "Cores":  8,
+    "Company":  "Dafna",
+    "OS":  null,
+    "OSVersion":  null,
+    "Manufacturer":  null,
+    "Model":  null,
+    "CPU":  null,
+    "Cores":  null,
     "RAM_GB":  15.39,
     "GPU":  "AMD Radeon(TM) Graphics",
-    "Disks":  [
-                  {
-                      "FriendlyName":  "JMicron Generic",
-                      "Size":  120034123776
-                  },
-                  {
-                      "FriendlyName":  "FORESEE 512GB SSD",
-                      "Size":  512110190592
-                  }
-              ],
-    "IPAddresses":  "192.168.68.74, 127.0.0.1",
+    "BIOSVersion":  null,
+    "SerialNumber":  null,
+    "Disks":  {
+                  "FriendlyName":  "FORESEE 512GB SSD",
+                  "Size":  512110190592
+              },
+    "MACAddresses":  [
+                         "A4:E8:8D:47:04:34",
+                         "46:7A:20:52:41:53",
+                         "48:39:20:52:41:53",
+                         "4A:12:20:52:41:53",
+                         "A4:E8:8D:47:04:33",
+                         "A6:E8:8D:47:04:33",
+                         "AA:E8:8D:47:04:33"
+                     ],
+    "IPAddresses":  "192.168.68.66",
+    "DefaultGateway":  "192.168.68.1",
     "Date":  {
-                 "value":  "\/Date(1763652419289)\/",
+                 "value":  "\/Date(1772098874745)\/",
                  "DisplayHint":  2,
-                 "DateTime":  "20 листопада 2025 р. 17:26:59"
+                 "DateTime":  "26 лютого 2026 р. 11:41:14"
              }
 }

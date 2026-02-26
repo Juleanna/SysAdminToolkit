@@ -1,0 +1,208 @@
+﻿Запуск: Відкриті порти
+D:\SysAdminToolkit\Scripts\Security\Check-OpenPorts.ps1
+---
+@{Success=True; Output=
+  TCP-ПОРТИ (Listen)
+  ----------------------------------------------------------------------
+
+LocalPort LocalAddress   State   PID ProcessName       
+--------- ------------   -----   --- -----------       
+      135 ::            Listen  1552 svchost           
+      135 0.0.0.0       Listen  1552 svchost           
+      139 192.168.68.66 Listen     4 System            
+      445 ::            Listen     4 System            
+     2179 ::            Listen  3304 vmms              
+     2179 0.0.0.0       Listen  3304 vmms              
+     3306 ::            Listen  6152 mysqld            
+     3306 0.0.0.0       Listen  6152 mysqld            
+     5040 0.0.0.0       Listen  9764 svchost           
+     5230 127.0.0.1     Listen 18460 Code              
+     5357 ::            Listen     4 System            
+     5432 0.0.0.0       Listen  7060 postgres          
+     5432 ::            Listen  7060 postgres          
+     5939 127.0.0.1     Listen  5676 TeamViewer_Service
+     6341 127.0.0.1     Listen  8572 MEGAsync          
+     6379 127.0.0.1     Listen  5444 redis-server      
+     7070 0.0.0.0       Listen  5208 AnyDesk           
+     7070 ::            Listen  5208 AnyDesk           
+     7680 ::            Listen  4768 svchost           
+    44645 127.0.0.1     Listen 15876 Code              
+    45112 127.0.0.1     Listen 24224 Viber             
+    49664 0.0.0.0       Listen  1304 lsass             
+    49664 ::            Listen  1304 lsass             
+    49665 0.0.0.0       Listen  1132 wininit           
+    49665 ::            Listen  1132 wininit           
+    49666 ::            Listen  1880 svchost           
+    49666 0.0.0.0       Listen  1880 svchost           
+    49667 0.0.0.0       Listen  2580 svchost           
+    49667 ::            Listen  2580 svchost           
+    49668 0.0.0.0       Listen  4856 spoolsv           
+    49668 ::            Listen  4856 spoolsv           
+    49669 ::            Listen  1212 services          
+    49669 0.0.0.0       Listen  1212 services          
+    49670 ::            Listen  8752 CNAB4RPD          
+    49670 0.0.0.0       Listen  8752 CNAB4RPD          
+    57875 127.0.0.1     Listen 15876 Code              
+
+
+
+  UDP-ПОРТИ
+  ----------------------------------------------------------------------
+
+LocalPort LocalAddress                   PID ProcessName       
+--------- ------------                   --- -----------       
+       53 0.0.0.0                       3804 svchost           
+      123 ::                           10540 svchost           
+      123 0.0.0.0                      10540 svchost           
+      137 192.168.68.66                    4 System            
+      138 192.168.68.66                    4 System            
+      500 ::                            5380 svchost           
+      500 0.0.0.0                       5380 svchost           
+     1900 fe80::24d1:70de:bf13:d4f1%19  4208 svchost           
+     1900 ::1                           4208 svchost           
+     1900 192.168.68.66                 4208 svchost           
+     1900 127.0.0.1                     4208 svchost           
+     3702 ::                           14580 svchost           
+     3702 0.0.0.0                      14580 svchost           
+     4500 0.0.0.0                       5380 svchost           
+     4500 ::                            5380 svchost           
+     5050 0.0.0.0                       9764 svchost           
+     5353 127.0.0.1                     5676 TeamViewer_Service
+     5353 0.0.0.0                      20196 chrome            
+     5353 ::                            2788 svchost           
+     5355 0.0.0.0                       2788 svchost           
+     5355 ::                            2788 svchost           
+    49177 0.0.0.0                       2952 dasHost           
+    49178 ::                            2952 dasHost           
+    49668 127.0.0.1                     4744 svchost           
+    49671 0.0.0.0                       5676 TeamViewer_Service
+    49672 ::                            5676 TeamViewer_Service
+    50001 0.0.0.0                       5208 AnyDesk           
+    50085 ::                           24200 ms-teams          
+    50089 ::                           13468 ms-teams          
+    51431 127.0.0.1                     6428 EXCEL             
+    52476 0.0.0.0                       6692 chrome            
+    53620 0.0.0.0                       6692 chrome            
+    53692 0.0.0.0                       6692 chrome            
+    53788 ::                           13468 ms-teams          
+    56725 0.0.0.0                       6692 chrome            
+    62230 fe80::24d1:70de:bf13:d4f1%19  4208 svchost           
+    62231 ::1                           4208 svchost           
+    62232 192.168.68.66                 4208 svchost           
+    62233 127.0.0.1                     4208 svchost           
+    62658 0.0.0.0                      23880 CMFNSS6           
+    63028 0.0.0.0                       3804 svchost           
+    63029 0.0.0.0                       3804 svchost           
+    63030 ::                            3804 svchost           
+    63182 0.0.0.0                       6692 chrome            
+    63642 0.0.0.0                      14580 svchost           
+    63643 ::                           14580 svchost           
+
+
+  ----------------------------------------------------------------------
+  Всього портів: 82
+; ErrorMessage=; DisplayName=Відкриті порти; PSComputerName=localhost; RunspaceId=d0bce677-2ec6-4fa7-8b9a-e1e5faad91f6; PSShowComputerName=False}
+@{Success=True; Output=
+  TCP-ПОРТИ (Listen)
+  ----------------------------------------------------------------------
+
+LocalPort LocalAddress   State   PID ProcessName       
+--------- ------------   -----   --- -----------       
+      135 ::            Listen  1552 svchost           
+      135 0.0.0.0       Listen  1552 svchost           
+      139 192.168.68.66 Listen     4 System            
+      445 ::            Listen     4 System            
+     2179 ::            Listen  3304 vmms              
+     2179 0.0.0.0       Listen  3304 vmms              
+     3306 ::            Listen  6152 mysqld            
+     3306 0.0.0.0       Listen  6152 mysqld            
+     5040 0.0.0.0       Listen  9764 svchost           
+     5230 127.0.0.1     Listen 18460 Code              
+     5357 ::            Listen     4 System            
+     5432 0.0.0.0       Listen  7060 postgres          
+     5432 ::            Listen  7060 postgres          
+     5939 127.0.0.1     Listen  5676 TeamViewer_Service
+     6341 127.0.0.1     Listen  8572 MEGAsync          
+     6379 127.0.0.1     Listen  5444 redis-server      
+     7070 0.0.0.0       Listen  5208 AnyDesk           
+     7070 ::            Listen  5208 AnyDesk           
+     7680 ::            Listen  4768 svchost           
+    44645 127.0.0.1     Listen 15876 Code              
+    45112 127.0.0.1     Listen 24224 Viber             
+    49664 0.0.0.0       Listen  1304 lsass             
+    49664 ::            Listen  1304 lsass             
+    49665 0.0.0.0       Listen  1132 wininit           
+    49665 ::            Listen  1132 wininit           
+    49666 ::            Listen  1880 svchost           
+    49666 0.0.0.0       Listen  1880 svchost           
+    49667 0.0.0.0       Listen  2580 svchost           
+    49667 ::            Listen  2580 svchost           
+    49668 0.0.0.0       Listen  4856 spoolsv           
+    49668 ::            Listen  4856 spoolsv           
+    49669 ::            Listen  1212 services          
+    49669 0.0.0.0       Listen  1212 services          
+    49670 ::            Listen  8752 CNAB4RPD          
+    49670 0.0.0.0       Listen  8752 CNAB4RPD          
+    57875 127.0.0.1     Listen 15876 Code              
+
+
+
+  UDP-ПОРТИ
+  ----------------------------------------------------------------------
+
+LocalPort LocalAddress                   PID ProcessName       
+--------- ------------                   --- -----------       
+       53 0.0.0.0                       3804 svchost           
+      123 ::                           10540 svchost           
+      123 0.0.0.0                      10540 svchost           
+      137 192.168.68.66                    4 System            
+      138 192.168.68.66                    4 System            
+      500 ::                            5380 svchost           
+      500 0.0.0.0                       5380 svchost           
+     1900 fe80::24d1:70de:bf13:d4f1%19  4208 svchost           
+     1900 ::1                           4208 svchost           
+     1900 192.168.68.66                 4208 svchost           
+     1900 127.0.0.1                     4208 svchost           
+     3702 ::                           14580 svchost           
+     3702 0.0.0.0                      14580 svchost           
+     4500 0.0.0.0                       5380 svchost           
+     4500 ::                            5380 svchost           
+     5050 0.0.0.0                       9764 svchost           
+     5353 127.0.0.1                     5676 TeamViewer_Service
+     5353 0.0.0.0                      20196 chrome            
+     5353 ::                            2788 svchost           
+     5355 0.0.0.0                       2788 svchost           
+     5355 ::                            2788 svchost           
+    49177 0.0.0.0                       2952 dasHost           
+    49178 ::                            2952 dasHost           
+    49668 127.0.0.1                     4744 svchost           
+    49671 0.0.0.0                       5676 TeamViewer_Service
+    49672 ::                            5676 TeamViewer_Service
+    50001 0.0.0.0                       5208 AnyDesk           
+    50085 ::                           24200 ms-teams          
+    50089 ::                           13468 ms-teams          
+    51431 127.0.0.1                     6428 EXCEL             
+    52476 0.0.0.0                       6692 chrome            
+    53620 0.0.0.0                       6692 chrome            
+    53692 0.0.0.0                       6692 chrome            
+    53788 ::                           13468 ms-teams          
+    56725 0.0.0.0                       6692 chrome            
+    62230 fe80::24d1:70de:bf13:d4f1%19  4208 svchost           
+    62231 ::1                           4208 svchost           
+    62232 192.168.68.66                 4208 svchost           
+    62233 127.0.0.1                     4208 svchost           
+    62658 0.0.0.0                      23880 CMFNSS6           
+    63028 0.0.0.0                       3804 svchost           
+    63029 0.0.0.0                       3804 svchost           
+    63030 ::                            3804 svchost           
+    63182 0.0.0.0                       6692 chrome            
+    63642 0.0.0.0                      14580 svchost           
+    63643 ::                           14580 svchost           
+
+
+  ----------------------------------------------------------------------
+  Всього портів: 82
+; ErrorMessage=; DisplayName=Відкриті порти; PSComputerName=localhost; RunspaceId=d0bce677-2ec6-4fa7-8b9a-e1e5faad91f6; PSShowComputerName=False}
+--- Успішно ---
+
+

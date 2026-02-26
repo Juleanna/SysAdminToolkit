@@ -632,3 +632,39 @@ Variable reference is not valid. ':' was not followed by a valid variable name c
 2026-02-25 17:23:57	[INFO]	Успішно: SMART-статус
 2026-02-25 17:24:17	[INFO]	Старт: Перевірка продуктивності (D:\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
 2026-02-25 17:24:19	[INFO]	Успішно: Перевірка продуктивності
+2026-02-26 10:12:42	[INFO]	Старт: Точки відновлення (D:\SysAdminToolkit\Scripts\Recovery\Manage-RestorePoints.ps1)
+2026-02-26 10:12:42	[INFO]	Manage-RestorePoints: Старт, режим=List
+2026-02-26 10:12:43	[INFO]	Успішно: Точки відновлення
+2026-02-26 10:15:27	[INFO]	Старт: Відкриті порти (D:\SysAdminToolkit\Scripts\Security\Check-OpenPorts.ps1)
+2026-02-26 10:15:27	[INFO]	Запуск перевірки відкритих портів
+2026-02-26 10:15:28	[INFO]	Перевірка портів завершена. Знайдено: 82
+2026-02-26 10:15:28	[INFO]	Успішно: Відкриті порти
+2026-02-26 10:20:02	[INFO]	Старт: SMART-статус (D:\SysAdminToolkit\Scripts\Disks\Disk-Health.ps1)
+2026-02-26 10:20:03	[INFO]	Disk-Health: Перевірено  диск(ів)
+2026-02-26 10:20:04	[INFO]	Успішно: SMART-статус
+2026-02-26 11:40:56	[INFO]	Старт: SMART-статус (D:\SysAdminToolkit\Scripts\Disks\Disk-Health.ps1)
+2026-02-26 11:40:58	[INFO]	Disk-Health: Перевірено  диск(ів)
+2026-02-26 11:40:58	[INFO]	Успішно: SMART-статус
+2026-02-26 11:41:10	[INFO]	Старт: Інвентаризація ПК (D:\SysAdminToolkit\Scripts\Inventory\Get-PC-Inventory.ps1)
+2026-02-26 11:41:15	[INFO]	Успішно: Інвентаризація ПК
+2026-02-26 11:41:36	[INFO]	Старт: Перевірка продуктивності (D:\SysAdminToolkit\Scripts\Monitoring\Check-Performance.ps1)
+2026-02-26 11:41:38	[INFO]	Успішно: Перевірка продуктивності
+2026-02-26 11:41:57	[INFO]	Старт: Інфо про систему (D:\SysAdminToolkit\Scripts\Utils\System-Info.ps1)
+2026-02-26 11:41:57	[INFO]	System-Info: запуск збору інформації про систему
+2026-02-26 11:42:00	[INFO]	System-Info: збір інформації про систему завершено
+2026-02-26 11:42:00	[INFO]	Успішно: Інфо про систему
+2026-02-26 11:42:46	[INFO]	Старт: Точки відновлення (D:\SysAdminToolkit\Scripts\Recovery\Manage-RestorePoints.ps1)
+2026-02-26 11:42:47	[INFO]	Manage-RestorePoints: Старт, режим=List
+2026-02-26 11:42:47	[INFO]	Успішно: Точки відновлення
+2026-02-26 11:43:36	[INFO]	Старт: Інфо про систему (D:\SysAdminToolkit\Scripts\Utils\System-Info.ps1)
+2026-02-26 11:43:37	[INFO]	System-Info: запуск збору інформації про систему
+2026-02-26 11:43:39	[INFO]	System-Info: збір інформації про систему завершено
+2026-02-26 11:43:40	[INFO]	Успішно: Інфо про систему
+2026-02-26 11:44:13	[INFO]	Старт: Перевірка загроз (D:\SysAdminToolkit\Scripts\Security\Quick-Malware-Check.ps1)
+2026-02-26 11:44:16	[INFO]	Успішно: Перевірка загроз
+2026-02-26 11:44:28	[INFO]	Старт: Паролі (звіт) (D:\SysAdminToolkit\Scripts\Security\PasswordPolicy-Report.ps1)
+2026-02-26 11:44:29	[INFO]	Успішно: Паролі (звіт)
+2026-02-26 11:44:58	[INFO]	Старт: Відкриті порти (D:\SysAdminToolkit\Scripts\Security\Check-OpenPorts.ps1)
+2026-02-26 11:44:58	[INFO]	Запуск перевірки відкритих портів
+2026-02-26 11:44:59	[INFO]	Перевірка портів завершена. Знайдено: 77
+2026-02-26 11:44:59	[INFO]	Успішно: Відкриті порти
